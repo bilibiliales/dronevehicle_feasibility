@@ -1,0 +1,2491 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+(base) PS D:\dronevehicle_feasibility> python audit_dronevehicle.py --data-root "D:\dronevehicle_feasibility"   --train-rgb-dir "D:\dronevehicle_feasibility\dataset\train\trainimg"   --train-ir-dir "D:\dronevehicle_feasibility\dataset\train\trainimgr"   --train-rgb-labels-dir "D:\dronevehicle_feasibility\dataset\train\trainlabel"   --train-ir-labels-dir "D:\dronevehicle_feasibility\dataset\train\trainlabelr"
+
+[train]
+{
+  "split": "train",
+  "root": "D:\\dronevehicle_feasibility\\train",
+  "directories": {
+    "rgb": "D:\\dronevehicle_feasibility\\dataset\\train\\trainimg",
+    "ir": "D:\\dronevehicle_feasibility\\dataset\\train\\trainimgr",
+    "rgb_labels": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel",
+    "ir_labels": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr"
+  },
+  "counts": {
+    "keys": 17990,
+    "rgb_images": 17990,
+    "ir_images": 17990,
+    "rgb_xml": 17990,
+    "ir_xml": 17990,
+    "rgb_objects": 265287,
+    "ir_objects": 293495,
+    "matched_same_class": 254078,
+    "unmatched_rgb": 11209,
+    "unmatched_ir": 39417
+  },
+  "unmatched_by_class": {
+    "ir_only:car": 32560,
+    "ir_only:truck": 2422,
+    "rgb_only:car": 10215,
+    "rgb_only:feright car": 104,
+    "ir_only:bus": 1005,
+    "ir_only:feright car": 651,
+    "rgb_only:truck": 292,
+    "rgb_only:bus": 99,
+    "rgb_only:van": 407,
+    "ir_only:van": 826,
+    "ir_only:feright_car": 1953,
+    "rgb_only:feright_car": 91,
+    "rgb_only:truvk": 1
+  },
+  "duplicate_keys": {
+    "rgb_images": {},
+    "ir_images": {},
+    "rgb_labels": {},
+    "ir_labels": {}
+  },
+  "examples_of_unmatched": [
+    {
+      "key": "00002",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00002.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00002.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            671.0,
+            116.0,
+            723.0,
+            148.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            677.0,
+            157.0,
+            724.0,
+            182.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            678.0,
+            291.0,
+            733.0,
+            328.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            688.0,
+            337.0,
+            739.0,
+            362.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            686.0,
+            366.0,
+            732.0,
+            394.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00003",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00003.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00003.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            679.0,
+            478.0,
+            732.0,
+            510.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            680.0,
+            517.0,
+            734.0,
+            547.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            682.0,
+            550.0,
+            737.0,
+            587.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            671.0,
+            364.0,
+            718.0,
+            396.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00004",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00004.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00004.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            632.0,
+            542.0,
+            692.0,
+            571.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00007",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00007.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00007.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            162.0,
+            456.0,
+            223.0,
+            493.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            167.0,
+            365.0,
+            217.0,
+            392.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            167.0,
+            301.0,
+            223.0,
+            327.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            161.0,
+            206.0,
+            214.0,
+            227.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            168.0,
+            168.0,
+            217.0,
+            201.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            178.0,
+            135.0,
+            224.0,
+            155.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            462.0,
+            105.0,
+            518.0,
+            129.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            608.0,
+            459.0,
+            663.0,
+            485.0
+          ]
+        },
+        {
+          "class": "truck",
+          "bbox": [
+            591.0,
+            424.0,
+            660.0,
+            452.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            599.0,
+            384.0,
+            655.0,
+            415.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00008",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00008.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00008.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            387.0,
+            428.0,
+            445.0,
+            452.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            377.0,
+            196.0,
+            433.0,
+            221.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            371.0,
+            158.0,
+            433.0,
+            189.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            522.0,
+            200.0,
+            572.0,
+            224.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00009",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00009.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00009.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            92.0,
+            528.0,
+            141.0,
+            550.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            94.0,
+            495.0,
+            141.0,
+            517.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            354.0,
+            167.0,
+            411.0,
+            191.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            362.0,
+            232.0,
+            419.0,
+            258.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            367.0,
+            325.0,
+            422.0,
+            349.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            371.0,
+            358.0,
+            429.0,
+            385.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            490.0,
+            311.0,
+            552.0,
+            338.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            509.0,
+            349.0,
+            563.0,
+            376.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            547.0,
+            483.0,
+            597.0,
+            504.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            391.0,
+            438.0,
+            453.0,
+            466.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00010",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00010.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00010.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            399.0,
+            590.0,
+            454.0,
+            616.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            524.0,
+            577.0,
+            588.0,
+            609.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            392.0,
+            494.0,
+            451.0,
+            518.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            385.0,
+            425.0,
+            443.0,
+            451.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            389.0,
+            344.0,
+            446.0,
+            368.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            386.0,
+            301.0,
+            445.0,
+            324.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            384.0,
+            177.0,
+            439.0,
+            207.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            383.0,
+            149.0,
+            439.0,
+            171.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            389.0,
+            110.0,
+            443.0,
+            135.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            523.0,
+            103.0,
+            580.0,
+            129.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00011",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00011.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00011.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            533.0,
+            590.0,
+            593.0,
+            613.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            536.0,
+            551.0,
+            593.0,
+            576.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            532.0,
+            448.0,
+            589.0,
+            478.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            533.0,
+            415.0,
+            591.0,
+            441.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            527.0,
+            382.0,
+            581.0,
+            405.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            534.0,
+            283.0,
+            594.0,
+            308.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            390.0,
+            277.0,
+            450.0,
+            300.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            386.0,
+            308.0,
+            443.0,
+            331.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            389.0,
+            339.0,
+            446.0,
+            363.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            388.0,
+            370.0,
+            445.0,
+            396.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00012",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00012.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00012.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            334.0,
+            322.0,
+            357.0,
+            372.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            363.0,
+            311.0,
+            387.0,
+            372.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            395.0,
+            316.0,
+            419.0,
+            372.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            427.0,
+            326.0,
+            454.0,
+            379.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            459.0,
+            319.0,
+            482.0,
+            375.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            493.0,
+            326.0,
+            515.0,
+            378.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            526.0,
+            324.0,
+            548.0,
+            381.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            560.0,
+            319.0,
+            583.0,
+            379.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            408.0,
+            216.0,
+            474.0,
+            254.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            675.0,
+            324.0,
+            736.0,
+            361.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00013",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00013.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00013.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            406.0,
+            519.0,
+            473.0,
+            563.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            667.0,
+            500.0,
+            695.0,
+            560.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            662.0,
+            406.0,
+            688.0,
+            460.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            380.0,
+            415.0,
+            435.0,
+            441.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            383.0,
+            357.0,
+            441.0,
+            379.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            380.0,
+            319.0,
+            444.0,
+            350.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            389.0,
+            292.0,
+            439.0,
+            313.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            673.0,
+            301.0,
+            698.0,
+            358.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            652.0,
+            219.0,
+            679.0,
+            281.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            668.0,
+            129.0,
+            732.0,
+            162.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00014",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00014.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00014.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            666.0,
+            562.0,
+            696.0,
+            622.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            515.0,
+            367.0,
+            573.0,
+            394.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            436.0,
+            369.0,
+            498.0,
+            392.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            436.0,
+            207.0,
+            458.0,
+            258.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            470.0,
+            214.0,
+            492.0,
+            259.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            502.0,
+            204.0,
+            529.0,
+            260.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            531.0,
+            197.0,
+            560.0,
+            259.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            577.0,
+            206.0,
+            600.0,
+            256.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            610.0,
+            197.0,
+            630.0,
+            250.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            654.0,
+            203.0,
+            685.0,
+            260.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00015",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00015.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00015.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            424.0,
+            536.0,
+            451.0,
+            596.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            550.0,
+            527.0,
+            580.0,
+            593.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            602.0,
+            538.0,
+            625.0,
+            592.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            632.0,
+            529.0,
+            655.0,
+            590.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            680.0,
+            537.0,
+            715.0,
+            600.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            673.0,
+            399.0,
+            698.0,
+            456.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            675.0,
+            316.0,
+            702.0,
+            365.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            521.0,
+            411.0,
+            575.0,
+            432.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            522.0,
+            374.0,
+            575.0,
+            400.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            415.0,
+            392.0,
+            473.0,
+            416.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00016",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00016.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00016.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            408.0,
+            524.0,
+            471.0,
+            550.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            346.0,
+            242.0,
+            387.0,
+            260.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            347.0,
+            212.0,
+            393.0,
+            236.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            342.0,
+            179.0,
+            389.0,
+            200.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            338.0,
+            148.0,
+            394.0,
+            169.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            341.0,
+            116.0,
+            397.0,
+            144.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            505.0,
+            111.0,
+            561.0,
+            136.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            504.0,
+            159.0,
+            561.0,
+            180.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            514.0,
+            201.0,
+            564.0,
+            222.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            508.0,
+            238.0,
+            567.0,
+            261.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00017",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00017.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00017.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            689.0,
+            531.0,
+            747.0,
+            555.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            514.0,
+            561.0,
+            573.0,
+            584.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            520.0,
+            520.0,
+            572.0,
+            545.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            512.0,
+            476.0,
+            569.0,
+            499.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            511.0,
+            427.0,
+            572.0,
+            456.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            510.0,
+            394.0,
+            565.0,
+            417.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            505.0,
+            361.0,
+            562.0,
+            389.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            507.0,
+            332.0,
+            564.0,
+            355.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            511.0,
+            304.0,
+            564.0,
+            324.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            507.0,
+            272.0,
+            563.0,
+            294.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00018",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00018.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00018.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            345.0,
+            577.0,
+            405.0,
+            603.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            346.0,
+            544.0,
+            408.0,
+            569.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            348.0,
+            510.0,
+            407.0,
+            535.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            351.0,
+            353.0,
+            410.0,
+            376.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            506.0,
+            314.0,
+            563.0,
+            337.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            509.0,
+            347.0,
+            568.0,
+            369.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            509.0,
+            378.0,
+            567.0,
+            401.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            513.0,
+            408.0,
+            573.0,
+            433.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            518.0,
+            444.0,
+            566.0,
+            463.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            513.0,
+            511.0,
+            574.0,
+            538.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00019",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00019.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00019.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            371.0,
+            268.0,
+            390.0,
+            313.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            401.0,
+            266.0,
+            427.0,
+            325.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            506.0,
+            396.0,
+            530.0,
+            451.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            140.0,
+            405.0,
+            163.0,
+            456.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            105.0,
+            413.0,
+            129.0,
+            462.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            512.0,
+            274.0,
+            531.0,
+            315.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            546.0,
+            272.0,
+            568.0,
+            326.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            613.0,
+            268.0,
+            638.0,
+            319.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            232.0,
+            86.0,
+            252.0,
+            125.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00020",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00020.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00020.xml",
+      "rgb_only": [
+        {
+          "class": "car",
+          "bbox": [
+            548.0,
+            153.0,
+            606.0,
+            179.0
+          ]
+        }
+      ],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            371.0,
+            148.0,
+            423.0,
+            171.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            445.0,
+            144.0,
+            502.0,
+            168.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            483.0,
+            195.0,
+            538.0,
+            249.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            549.0,
+            144.0,
+            607.0,
+            170.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            620.0,
+            145.0,
+            684.0,
+            175.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            709.0,
+            147.0,
+            754.0,
+            174.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00022",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00022.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00022.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            125.0,
+            405.0,
+            151.0,
+            462.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            159.0,
+            406.0,
+            183.0,
+            455.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            192.0,
+            551.0,
+            240.0,
+            611.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            726.0,
+            405.0,
+            751.0,
+            466.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00023",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00023.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00023.xml",
+      "rgb_only": [
+        {
+          "class": "feright car",
+          "bbox": [
+            314.0,
+            431.0,
+            342.0,
+            496.0
+          ]
+        }
+      ],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            237.0,
+            570.0,
+            283.0,
+            615.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            247.0,
+            432.0,
+            274.0,
+            489.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            283.0,
+            430.0,
+            309.0,
+            489.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            349.0,
+            434.0,
+            374.0,
+            486.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            531.0,
+            435.0,
+            555.0,
+            493.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            570.0,
+            432.0,
+            591.0,
+            491.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            630.0,
+            438.0,
+            660.0,
+            498.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            275.0,
+            113.0,
+            334.0,
+            156.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            458.0,
+            118.0,
+            507.0,
+            167.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            657.0,
+            116.0,
+            689.0,
+            162.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00024",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00024.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00024.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            183.0,
+            586.0,
+            210.0,
+            633.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            679.0,
+            574.0,
+            713.0,
+            629.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            379.0,
+            435.0,
+            402.0,
+            497.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            347.0,
+            439.0,
+            368.0,
+            497.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            311.0,
+            437.0,
+            331.0,
+            486.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            247.0,
+            436.0,
+            271.0,
+            501.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            449.0,
+            93.0,
+            472.0,
+            139.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00025",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00025.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00025.xml",
+      "rgb_only": [
+        {
+          "class": "car",
+          "bbox": [
+            595.0,
+            401.0,
+            618.0,
+            450.0
+          ]
+        }
+      ],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            121.0,
+            550.0,
+            143.0,
+            607.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            235.0,
+            550.0,
+            257.0,
+            608.0
+          ]
+        },
+        {
+          "class": "feright car",
+          "bbox": [
+            276.0,
+            539.0,
+            302.0,
+            613.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            314.0,
+            543.0,
+            336.0,
+            597.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            141.0,
+            391.0,
+            168.0,
+            447.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            177.0,
+            391.0,
+            200.0,
+            447.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            212.0,
+            394.0,
+            236.0,
+            451.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            241.0,
+            389.0,
+            273.0,
+            449.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            280.0,
+            393.0,
+            301.0,
+            453.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            309.0,
+            392.0,
+            330.0,
+            443.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00028",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00028.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00028.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            165.0,
+            563.0,
+            220.0,
+            589.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            176.0,
+            253.0,
+            202.0,
+            318.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            175.0,
+            146.0,
+            199.0,
+            211.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00029",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00029.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00029.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            120.0,
+            185.0,
+            155.0,
+            245.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            196.0,
+            240.0,
+            218.0,
+            300.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            566.0,
+            498.0,
+            626.0,
+            521.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            439.0,
+            198.0,
+            460.0,
+            238.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00030",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00030.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00030.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            208.0,
+            576.0,
+            234.0,
+            628.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            415.0,
+            520.0,
+            441.0,
+            586.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            455.0,
+            533.0,
+            478.0,
+            591.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            218.0,
+            196.0,
+            240.0,
+            250.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            217.0,
+            128.0,
+            240.0,
+            184.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            290.0,
+            83.0,
+            312.0,
+            125.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00031",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00031.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00031.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            227.0,
+            558.0,
+            248.0,
+            616.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            301.0,
+            425.0,
+            324.0,
+            481.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            408.0,
+            397.0,
+            430.0,
+            462.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            440.0,
+            390.0,
+            464.0,
+            447.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            544.0,
+            399.0,
+            566.0,
+            454.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            579.0,
+            397.0,
+            604.0,
+            456.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            613.0,
+            395.0,
+            639.0,
+            454.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            650.0,
+            395.0,
+            678.0,
+            455.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            685.0,
+            392.0,
+            708.0,
+            451.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            717.0,
+            391.0,
+            743.0,
+            451.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00032",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00032.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00032.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            110.0,
+            366.0,
+            135.0,
+            428.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            146.0,
+            360.0,
+            170.0,
+            417.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            253.0,
+            369.0,
+            278.0,
+            427.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            289.0,
+            365.0,
+            314.0,
+            426.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            324.0,
+            364.0,
+            350.0,
+            425.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            357.0,
+            366.0,
+            388.0,
+            426.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            393.0,
+            363.0,
+            416.0,
+            420.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            425.0,
+            363.0,
+            448.0,
+            416.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            493.0,
+            365.0,
+            513.0,
+            418.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            524.0,
+            370.0,
+            547.0,
+            431.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00033",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00033.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00033.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            135.0,
+            437.0,
+            163.0,
+            499.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            172.0,
+            430.0,
+            207.0,
+            486.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            256.0,
+            444.0,
+            279.0,
+            503.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            329.0,
+            443.0,
+            351.0,
+            496.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            364.0,
+            444.0,
+            387.0,
+            502.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            441.0,
+            439.0,
+            466.0,
+            498.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            610.0,
+            439.0,
+            635.0,
+            495.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            658.0,
+            445.0,
+            680.0,
+            503.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            690.0,
+            447.0,
+            711.0,
+            504.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            530.0,
+            442.0,
+            553.0,
+            486.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00034",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00034.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00034.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            161.0,
+            437.0,
+            185.0,
+            497.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            201.0,
+            440.0,
+            223.0,
+            492.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            289.0,
+            441.0,
+            308.0,
+            496.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            315.0,
+            440.0,
+            342.0,
+            496.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            349.0,
+            439.0,
+            372.0,
+            488.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            414.0,
+            442.0,
+            436.0,
+            498.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            241.0,
+            288.0,
+            265.0,
+            346.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            276.0,
+            287.0,
+            298.0,
+            347.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            314.0,
+            284.0,
+            335.0,
+            340.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            346.0,
+            285.0,
+            371.0,
+            346.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00035",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00035.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00035.xml",
+      "rgb_only": [
+        {
+          "class": "car",
+          "bbox": [
+            618.0,
+            389.0,
+            638.0,
+            440.0
+          ]
+        }
+      ],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            229.0,
+            371.0,
+            253.0,
+            430.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            307.0,
+            386.0,
+            330.0,
+            440.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            343.0,
+            381.0,
+            365.0,
+            441.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            377.0,
+            399.0,
+            394.0,
+            448.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            476.0,
+            384.0,
+            504.0,
+            442.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            535.0,
+            276.0,
+            596.0,
+            310.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            575.0,
+            391.0,
+            596.0,
+            445.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            610.0,
+            391.0,
+            630.0,
+            442.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            647.0,
+            392.0,
+            670.0,
+            447.0
+          ]
+        }
+      ]
+    },
+    {
+      "key": "00036",
+      "rgb_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabel\\00036.xml",
+      "ir_xml": "D:\\dronevehicle_feasibility\\dataset\\train\\trainlabelr\\00036.xml",
+      "rgb_only": [],
+      "ir_only": [
+        {
+          "class": "car",
+          "bbox": [
+            284.0,
+            594.0,
+            347.0,
+            625.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            433.0,
+            579.0,
+            460.0,
+            627.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            307.0,
+            501.0,
+            367.0,
+            526.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            322.0,
+            395.0,
+            368.0,
+            419.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            332.0,
+            365.0,
+            388.0,
+            394.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            335.0,
+            328.0,
+            389.0,
+            358.0
+          ]
+        },
+        {
+          "class": "car",
+          "bbox": [
+            356.0,
+            254.0,
+            414.0,
+            283.0
+          ]
+        }
+      ]
+    }
+  ]
+}
+[WARN] Missing split directory: D:\dronevehicle_feasibility\val
+[WARN] Missing split directory: D:\dronevehicle_feasibility\test
+
+Saved: feasibility_report\pair_annotation_audit.csv
+Saved: feasibility_report\pair_annotation_audit.json
+
+Interpretation caution: unmatched annotations may be caused by imperfect matching,
+registration differences, annotation policy, or missing labels; do not assume they are errors.
+(base) PS D:\dronevehicle_feasibility>
