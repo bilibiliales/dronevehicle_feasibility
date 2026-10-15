@@ -1,0 +1,140 @@
+{
+  "data_root": "dataset",
+  "mode": "sensitivity",
+  "iou_threshold": 0.5,
+  "polygon_iou_requested": false,
+  "sampling": {
+    "mode": "random",
+    "seed": 20261015,
+    "limit": 300
+  },
+  "splits": {
+    "train": {
+      "split": "train",
+      "root": "dataset\\train",
+      "directories": {
+        "rgb": "dataset\\train\\trainimg",
+        "ir": "dataset\\train\\trainimgr",
+        "rgb_labels": "dataset\\train\\trainlabel",
+        "ir_labels": "dataset\\train\\trainlabelr"
+      },
+      "metrics": [
+        "bbox"
+      ],
+      "thresholds": [
+        0.5
+      ],
+      "polygon_iou_available": null,
+      "sampling": {
+        "split": "train",
+        "sampling_mode": "random",
+        "seed": 20261015,
+        "available_keys": 17990,
+        "selected_keys": 300,
+        "limit": 300,
+        "selection_note": "Random sample without replacement from the sorted union of available keys; seed is offset by split for reproducibility."
+      },
+      "cells": [
+        {
+          "split": "train",
+          "metric": "bbox",
+          "iou_threshold": 0.5,
+          "rgb_objects": 4392,
+          "ir_objects": 4947,
+          "matched_same_class": 4168,
+          "unmatched_rgb": 224,
+          "unmatched_ir": 779,
+          "unmatched_total": 1003,
+          "unmatched_rate": 0.1074,
+          "unmatched_ir_by_class": {
+            "rgb_only:car": 206,
+            "ir_only:car": 658,
+            "ir_only:bus": 44,
+            "ir_only:feright car": 6,
+            "ir_only:truck": 23,
+            "rgb_only:truck": 6,
+            "rgb_only:bus": 1,
+            "rgb_only:feright car": 1,
+            "rgb_only:van": 9,
+            "ir_only:feright_car": 29,
+            "ir_only:van": 19,
+            "rgb_only:feright_car": 1
+          }
+        }
+      ],
+      "verdict": {
+        "reference_threshold": 0.5,
+        "unmatched_rate_min": 0.1074,
+        "unmatched_rate_max": 0.1074,
+        "unmatched_rate_spread": 0.0,
+        "relative_spread": 0.0,
+        "threshold_driven_spread": 0.0,
+        "metric_driven_spread": 0.0,
+        "conclusion": "STABLE-enough: unmatched rate is fairly insensitive here; still verify visually before trusting it as an annotation-gap measure."
+      }
+    },
+    "val": {
+      "split": "val",
+      "root": "dataset\\val",
+      "directories": {
+        "rgb": "dataset\\val\\valimg",
+        "ir": "dataset\\val\\valimgr",
+        "rgb_labels": "dataset\\val\\vallabel",
+        "ir_labels": "dataset\\val\\vallabelr"
+      },
+      "metrics": [
+        "bbox"
+      ],
+      "thresholds": [
+        0.5
+      ],
+      "polygon_iou_available": null,
+      "sampling": {
+        "split": "val",
+        "sampling_mode": "random",
+        "seed": 20261015,
+        "available_keys": 1469,
+        "selected_keys": 300,
+        "limit": 300,
+        "selection_note": "Random sample without replacement from the sorted union of available keys; seed is offset by split for reproducibility."
+      },
+      "cells": [
+        {
+          "split": "val",
+          "metric": "bbox",
+          "iou_threshold": 0.5,
+          "rgb_objects": 4309,
+          "ir_objects": 4671,
+          "matched_same_class": 4123,
+          "unmatched_rgb": 186,
+          "unmatched_ir": 548,
+          "unmatched_total": 734,
+          "unmatched_rate": 0.0817,
+          "unmatched_ir_by_class": {
+            "ir_only:bus": 7,
+            "ir_only:car": 435,
+            "ir_only:truck": 61,
+            "ir_only:feright car": 2,
+            "rgb_only:car": 170,
+            "rgb_only:feright car": 1,
+            "rgb_only:truck": 5,
+            "ir_only:van": 16,
+            "ir_only:feright_car": 27,
+            "rgb_only:van": 9,
+            "rgb_only:bus": 1
+          }
+        }
+      ],
+      "verdict": {
+        "reference_threshold": 0.5,
+        "unmatched_rate_min": 0.0817,
+        "unmatched_rate_max": 0.0817,
+        "unmatched_rate_spread": 0.0,
+        "relative_spread": 0.0,
+        "threshold_driven_spread": 0.0,
+        "metric_driven_spread": 0.0,
+        "conclusion": "STABLE-enough: unmatched rate is fairly insensitive here; still verify visually before trusting it as an annotation-gap measure."
+      }
+    }
+  }
+}

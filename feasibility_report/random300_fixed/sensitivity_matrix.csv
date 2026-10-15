@@ -1,0 +1,3 @@
+﻿split,metric,iou_threshold,rgb_objects,ir_objects,matched_same_class,unmatched_rgb,unmatched_ir,unmatched_total,unmatched_rate
+train,bbox,0.5,4392,4947,4168,224,779,1003,0.1074
+val,bbox,0.5,4309,4671,4123,186,548,734,0.0817
