@@ -1,0 +1,127 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+(base) PS D:\dronevehicle_feasibility> python audit_dronevehicle.py --help
+usage: audit_dronevehicle.py [-h] --data-root DATA_ROOT [--out-dir OUT_DIR] [--iou-threshold IOU_THRESHOLD] [--polygon-iou] [--limit LIMIT] [--sample-mode {first,random}] [--sample-seed SAMPLE_SEED]
+                             [--sensitivity] [--metrics METRICS] [--thresholds THRESHOLDS] [--visualize] [--visualize-top VISUALIZE_TOP] [--focus-class FOCUS_CLASS] [--splits SPLITS]
+                             [--train-rgb-dir TRAIN_RGB_DIR] [--train-ir-dir TRAIN_IR_DIR] [--train-rgb-label-dir TRAIN_RGB_LABELS_DIR] [--train-ir-label-dir TRAIN_IR_LABELS_DIR]
+                             [--val-rgb-dir VAL_RGB_DIR] [--val-ir-dir VAL_IR_DIR] [--val-rgb-label-dir VAL_RGB_LABELS_DIR] [--val-ir-label-dir VAL_IR_LABELS_DIR] [--test-rgb-dir TEST_RGB_DIR]
+                             [--test-ir-dir TEST_IR_DIR] [--test-rgb-label-dir TEST_RGB_LABELS_DIR] [--test-ir-label-dir TEST_IR_LABELS_DIR]
+
+Inspect DroneVehicle RGB/IR pairs and modality annotation differences.
+
+options:
+  -h, --help            show this help message and exit
+  --data-root DATA_ROOT
+                        Root containing train/, val/, test/ subdirectories.
+  --out-dir OUT_DIR
+  --iou-threshold IOU_THRESHOLD
+                        Reference matching IoU threshold (default 0.5).
+  --polygon-iou         Audit mode: use exact polygon IoU if Shapely is installed.
+  --limit LIMIT         Maximum number of keys to audit per split (0 = all available keys). Use --sample-mode to control how limited samples are selected.
+  --sample-mode {first,random}
+                        Sampling strategy when --limit is active: 'first' selects the first N sorted keys; 'random' selects N keys reproducibly (default: first).
+  --sample-seed SAMPLE_SEED
+                        Base random seed for --sample-mode random. A stable offset is applied for each split.
+  --sensitivity         Run matching-algorithm sensitivity analysis (metrics x thresholds).
+  --metrics METRICS     Comma list for --sensitivity (default 'bbox,polygon').
+  --thresholds THRESHOLDS
+                        Comma list of IoU thresholds for --sensitivity (default '0.3,0.5,0.7').
+  --visualize           Render representative side-by-side RGB/IR figures with annotations.
+  --visualize-top VISUALIZE_TOP
+                        How many sample figures per split to render (default 8).
+  --focus-class FOCUS_CLASS
+                        Class to prioritize in visualization (default 'car').
+  --splits SPLITS       Comma-separated splits to process, e.g. train,val.
+  --train-rgb-dir TRAIN_RGB_DIR
+                        Explicit train rgb directory, overrides discovery.
+  --train-ir-dir TRAIN_IR_DIR
+                        Explicit train ir directory, overrides discovery.
+  --train-rgb-label-dir, --train-rgb-labels-dir TRAIN_RGB_LABELS_DIR
+                        Explicit train rgb_labels directory, overrides discovery.
+  --train-ir-label-dir, --train-ir-labels-dir TRAIN_IR_LABELS_DIR
+                        Explicit train ir_labels directory, overrides discovery.
+  --val-rgb-dir VAL_RGB_DIR
+                        Explicit val rgb directory, overrides discovery.
+  --val-ir-dir VAL_IR_DIR
+                        Explicit val ir directory, overrides discovery.
+  --val-rgb-label-dir, --val-rgb-labels-dir VAL_RGB_LABELS_DIR
+                        Explicit val rgb_labels directory, overrides discovery.
+  --val-ir-label-dir, --val-ir-labels-dir VAL_IR_LABELS_DIR
+                        Explicit val ir_labels directory, overrides discovery.
+  --test-rgb-dir TEST_RGB_DIR
+                        Explicit test rgb directory, overrides discovery.
+  --test-ir-dir TEST_IR_DIR
+                        Explicit test ir directory, overrides discovery.
+  --test-rgb-label-dir, --test-rgb-labels-dir TEST_RGB_LABELS_DIR
+                        Explicit test rgb_labels directory, overrides discovery.
+  --test-ir-label-dir, --test-ir-labels-dir TEST_IR_LABELS_DIR
+                        Explicit test ir_labels directory, overrides discovery.
+(base) PS D:\dronevehicle_feasibility> python .\audit_dronevehicle.py `
+>>   --data-root "D:\dronevehicle_feasibility\dataset" `
+>>   --out-dir ".\feasibility_report\random300_seed20261015" `
+>>   --sensitivity `
+>>   --metrics bbox `
+>>   --thresholds 0.5 `
+>>   --splits train,val `
+>>   --limit 300 `
+>>   --sample-mode random `
+>>   --sample-seed 20261015
+
+[train] SENSITIVITY (bbox x [0.5])
+{
+  "sampling": {
+    "split": "train",
+    "sampling_mode": "random",
+    "seed": 20261015,
+    "available_keys": 0,
+    "selected_keys": 0,
+    "limit": 300,
+    "selection_note": "Random sample without replacement from the sorted union of available keys; seed is offset by split for reproducibility."
+  },
+  "verdict": {}
+}
+
+[val] SENSITIVITY (bbox x [0.5])
+{
+  "sampling": {
+    "split": "val",
+    "sampling_mode": "random",
+    "seed": 20261015,
+    "available_keys": 0,
+    "selected_keys": 0,
+    "limit": 300,
+    "selection_note": "Random sample without replacement from the sorted union of available keys; seed is offset by split for reproducibility."
+  },
+  "verdict": {}
+}
+
+Saved: feasibility_report\random300_seed20261015\sensitivity_matrix.csv
+Saved: feasibility_report\random300_seed20261015\sensitivity_matrix.json
+
+Verdict rule: if unmatched_rate_spread >= 0.10 or relative_spread >= 0.5, the disagreement count is a matcher artifact, not proof of real cross-modal gaps.
+(base) PS D:\dronevehicle_feasibility> Import-Csv ".\feasibility_report\random300_seed20261015\sensitivity_matrix.csv" |
+>>     Format-Table split,metric,iou_threshold,rgb_objects,ir_objects,matched_same_class,unmatched_rgb,unmatched_ir,unmatched_rate -AutoSize
+
+split metric iou_threshold rgb_objects ir_objects matched_same_class unmatched_rgb unmatched_ir unmatched_rate
+----- ------ ------------- ----------- ---------- ------------------ ------------- ------------ --------------
+train bbox   0.5           0           0          0                  0             0
+val   bbox   0.5           0           0          0                  0             0
+
+
+(base) PS D:\dronevehicle_feasibility> Select-String `
+>>   -Path ".\feasibility_report\random300_seed20261015\sensitivity_matrix.json" `
+>>   -Pattern '"sampling"|"available_keys"|"selected_keys"|"unmatched_rate"|"conclusion"'
+
+feasibility_report\random300_seed20261015\sensitivity_matrix.json:6:  "sampling": {
+feasibility_report\random300_seed20261015\sensitivity_matrix.json:28:      "sampling": {
+feasibility_report\random300_seed20261015\sensitivity_matrix.json:32:        "available_keys": 0,
+feasibility_report\random300_seed20261015\sensitivity_matrix.json:33:        "selected_keys": 0,
+feasibility_report\random300_seed20261015\sensitivity_matrix.json:48:          "unmatched_rate": null,
+feasibility_report\random300_seed20261015\sensitivity_matrix.json:70:      "sampling": {
+feasibility_report\random300_seed20261015\sensitivity_matrix.json:74:        "available_keys": 0,
+feasibility_report\random300_seed20261015\sensitivity_matrix.json:75:        "selected_keys": 0,
+feasibility_report\random300_seed20261015\sensitivity_matrix.json:90:          "unmatched_rate": null,
+
+
+(base) PS D:\dronevehicle_feasibility>

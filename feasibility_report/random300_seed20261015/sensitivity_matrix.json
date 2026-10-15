@@ -1,0 +1,97 @@
+{
+  "data_root": "D:\\dronevehicle_feasibility\\dataset",
+  "mode": "sensitivity",
+  "iou_threshold": 0.5,
+  "polygon_iou_requested": false,
+  "sampling": {
+    "mode": "random",
+    "seed": 20261015,
+    "limit": 300
+  },
+  "splits": {
+    "train": {
+      "split": "train",
+      "root": "D:\\dronevehicle_feasibility\\dataset\\train",
+      "directories": {
+        "rgb": null,
+        "ir": null,
+        "rgb_labels": null,
+        "ir_labels": null
+      },
+      "metrics": [
+        "bbox"
+      ],
+      "thresholds": [
+        0.5
+      ],
+      "polygon_iou_available": null,
+      "sampling": {
+        "split": "train",
+        "sampling_mode": "random",
+        "seed": 20261015,
+        "available_keys": 0,
+        "selected_keys": 0,
+        "limit": 300,
+        "selection_note": "Random sample without replacement from the sorted union of available keys; seed is offset by split for reproducibility."
+      },
+      "cells": [
+        {
+          "split": "train",
+          "metric": "bbox",
+          "iou_threshold": 0.5,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        }
+      ],
+      "verdict": {}
+    },
+    "val": {
+      "split": "val",
+      "root": "D:\\dronevehicle_feasibility\\dataset\\val",
+      "directories": {
+        "rgb": null,
+        "ir": null,
+        "rgb_labels": null,
+        "ir_labels": null
+      },
+      "metrics": [
+        "bbox"
+      ],
+      "thresholds": [
+        0.5
+      ],
+      "polygon_iou_available": null,
+      "sampling": {
+        "split": "val",
+        "sampling_mode": "random",
+        "seed": 20261015,
+        "available_keys": 0,
+        "selected_keys": 0,
+        "limit": 300,
+        "selection_note": "Random sample without replacement from the sorted union of available keys; seed is offset by split for reproducibility."
+      },
+      "cells": [
+        {
+          "split": "val",
+          "metric": "bbox",
+          "iou_threshold": 0.5,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        }
+      ],
+      "verdict": {}
+    }
+  }
+}
