@@ -1,0 +1,197 @@
+{
+  "data_root": "dataset",
+  "mode": "sensitivity",
+  "iou_threshold": 0.5,
+  "polygon_iou_requested": false,
+  "splits": {
+    "train": {
+      "split": "train",
+      "root": "dataset\\train",
+      "directories": {
+        "rgb": "dataset\\train\\trainimg",
+        "ir": "dataset\\train\\trainimgr",
+        "rgb_labels": "dataset\\train\\trainlabel",
+        "ir_labels": "dataset\\train\\trainlabelr"
+      },
+      "metrics": [
+        "bbox"
+      ],
+      "thresholds": [
+        0.3,
+        0.5,
+        0.7
+      ],
+      "polygon_iou_available": null,
+      "cells": [
+        {
+          "split": "train",
+          "metric": "bbox",
+          "iou_threshold": 0.3,
+          "rgb_objects": 2547,
+          "ir_objects": 5336,
+          "matched_same_class": 2527,
+          "unmatched_rgb": 20,
+          "unmatched_ir": 2809,
+          "unmatched_total": 2829,
+          "unmatched_rate": 0.3589,
+          "unmatched_ir_by_class": {
+            "ir_only:car": 2404,
+            "ir_only:truck": 17,
+            "rgb_only:feright car": 5,
+            "ir_only:bus": 36,
+            "ir_only:feright car": 352,
+            "rgb_only:truck": 4,
+            "rgb_only:car": 11
+          }
+        },
+        {
+          "split": "train",
+          "metric": "bbox",
+          "iou_threshold": 0.5,
+          "rgb_objects": 2547,
+          "ir_objects": 5336,
+          "matched_same_class": 2519,
+          "unmatched_rgb": 28,
+          "unmatched_ir": 2817,
+          "unmatched_total": 2845,
+          "unmatched_rate": 0.3609,
+          "unmatched_ir_by_class": {
+            "ir_only:car": 2411,
+            "ir_only:truck": 17,
+            "rgb_only:car": 18,
+            "rgb_only:feright car": 6,
+            "ir_only:bus": 36,
+            "ir_only:feright car": 353,
+            "rgb_only:truck": 4
+          }
+        },
+        {
+          "split": "train",
+          "metric": "bbox",
+          "iou_threshold": 0.7,
+          "rgb_objects": 2547,
+          "ir_objects": 5336,
+          "matched_same_class": 2358,
+          "unmatched_rgb": 189,
+          "unmatched_ir": 2978,
+          "unmatched_total": 3167,
+          "unmatched_rate": 0.4018,
+          "unmatched_ir_by_class": {
+            "ir_only:car": 2568,
+            "rgb_only:car": 175,
+            "ir_only:truck": 18,
+            "rgb_only:feright car": 9,
+            "ir_only:bus": 36,
+            "ir_only:feright car": 356,
+            "rgb_only:truck": 5
+          }
+        }
+      ],
+      "verdict": {
+        "reference_threshold": 0.5,
+        "unmatched_rate_min": 0.3589,
+        "unmatched_rate_max": 0.4018,
+        "unmatched_rate_spread": 0.0429,
+        "relative_spread": 0.1195,
+        "threshold_driven_spread": 0.0429,
+        "metric_driven_spread": 0.0,
+        "conclusion": "STABLE-enough: unmatched rate is fairly insensitive here; still verify visually before trusting it as an annotation-gap measure."
+      }
+    },
+    "val": {
+      "split": "val",
+      "root": "dataset\\val",
+      "directories": {
+        "rgb": "dataset\\val\\valimg",
+        "ir": "dataset\\val\\valimgr",
+        "rgb_labels": "dataset\\val\\vallabel",
+        "ir_labels": "dataset\\val\\vallabelr"
+      },
+      "metrics": [
+        "bbox"
+      ],
+      "thresholds": [
+        0.3,
+        0.5,
+        0.7
+      ],
+      "polygon_iou_available": null,
+      "cells": [
+        {
+          "split": "val",
+          "metric": "bbox",
+          "iou_threshold": 0.3,
+          "rgb_objects": 2494,
+          "ir_objects": 3072,
+          "matched_same_class": 2444,
+          "unmatched_rgb": 50,
+          "unmatched_ir": 628,
+          "unmatched_total": 678,
+          "unmatched_rate": 0.1218,
+          "unmatched_ir_by_class": {
+            "ir_only:car": 495,
+            "ir_only:bus": 9,
+            "ir_only:truck": 4,
+            "ir_only:feright car": 120,
+            "rgb_only:feright car": 4,
+            "rgb_only:car": 45,
+            "rgb_only:truck": 1
+          }
+        },
+        {
+          "split": "val",
+          "metric": "bbox",
+          "iou_threshold": 0.5,
+          "rgb_objects": 2494,
+          "ir_objects": 3072,
+          "matched_same_class": 2397,
+          "unmatched_rgb": 97,
+          "unmatched_ir": 675,
+          "unmatched_total": 772,
+          "unmatched_rate": 0.1387,
+          "unmatched_ir_by_class": {
+            "ir_only:car": 537,
+            "ir_only:bus": 9,
+            "ir_only:truck": 5,
+            "ir_only:feright car": 124,
+            "rgb_only:feright car": 8,
+            "rgb_only:car": 87,
+            "rgb_only:truck": 2
+          }
+        },
+        {
+          "split": "val",
+          "metric": "bbox",
+          "iou_threshold": 0.7,
+          "rgb_objects": 2494,
+          "ir_objects": 3072,
+          "matched_same_class": 2142,
+          "unmatched_rgb": 352,
+          "unmatched_ir": 930,
+          "unmatched_total": 1282,
+          "unmatched_rate": 0.2303,
+          "unmatched_ir_by_class": {
+            "rgb_only:car": 326,
+            "ir_only:car": 776,
+            "ir_only:bus": 10,
+            "ir_only:truck": 13,
+            "ir_only:feright car": 131,
+            "rgb_only:feright car": 15,
+            "rgb_only:truck": 10,
+            "rgb_only:bus": 1
+          }
+        }
+      ],
+      "verdict": {
+        "reference_threshold": 0.5,
+        "unmatched_rate_min": 0.1218,
+        "unmatched_rate_max": 0.2303,
+        "unmatched_rate_spread": 0.1085,
+        "relative_spread": 0.8908,
+        "threshold_driven_spread": 0.1085,
+        "metric_driven_spread": 0.0,
+        "conclusion": "UNRELIABLE: unmatched rate swings strongly with matcher/threshold; treat label-disagreement as a matcher artifact, not proof of real gaps."
+      }
+    }
+  }
+}

@@ -559,6 +559,12 @@ def main():
                     help="How many sample figures per split to render (default 8).")
     ap.add_argument("--focus-class", type=str, default="car",
                     help="Class to prioritize in visualization (default 'car').")
+    ap.add_argument(
+        "--splits",
+        type=str,
+        default="train,val,test",
+        help="Comma-separated splits to process, e.g. train,val."
+    )
 
     # Per-split directory overrides; label dirs accept both singular and plural flag names.
     _role_flag = {"rgb": "rgb", "ir": "ir", "rgb_labels": "rgb-label", "ir_labels": "ir-label"}
@@ -583,7 +589,16 @@ def main():
     all_rows = []
     cells_all = []
     viz_all = []
-    for split in ("train", "val", "test"):
+    selected_splits = [
+        s.strip().lower()
+        for s in args.splits.split(",")
+        if s.strip()
+    ]
+    invalid_splits = set(selected_splits) - {"train", "val", "test"}
+    if invalid_splits:
+        raise SystemExit(f"Invalid splits: {sorted(invalid_splits)}")
+
+    for split in selected_splits:
         if not split_to_process(split):
             print(f"[WARN] Missing split directory and no explicit dirs: {split}", file=sys.stderr)
             continue
