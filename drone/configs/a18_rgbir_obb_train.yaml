@@ -1,0 +1,31 @@
+# 数据集配置（增强训练 + 原始验证/测试）
+# 说明：
+# 1) 训练集使用 train_aug
+# 2) 验证/测试集不做增强
+# 3) 如果你的类别数不是 5，请把 nc 改掉
+# 4) 如果你想显示真实类别名，可把 names 改成你的类别列表
+
+path: /root/autodl-tmp
+
+train_rgb: /root/autodl-tmp/train/trainimg
+train_ir: /root/autodl-tmp/train/trainimgr
+train_rgb_labels: /root/autodl-tmp/train/trainlabel
+train_ir_labels: /root/autodl-tmp/train/trainlabelr
+
+val_rgb: /root/autodl-tmp/val/valimg
+val_ir: /root/autodl-tmp/val/valimgr
+val_rgb_labels: /root/autodl-tmp/val/vallabel
+val_ir_labels: /root/autodl-tmp/val/vallabelr
+
+test_rgb: /root/autodl-tmp/test/testimg
+test_ir: /root/autodl-tmp/test/testimgr
+test_rgb_labels: /root/autodl-tmp/test/testlabel
+test_ir_labels: /root/autodl-tmp/test/testlabelr
+
+nc: 5
+names:
+  - car
+  - truck
+  - bus
+  - van
+  - freight_car
