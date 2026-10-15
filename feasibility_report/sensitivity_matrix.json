@@ -1,0 +1,311 @@
+{
+  "data_root": "D:\\dronevehicle_feasibility",
+  "mode": "sensitivity",
+  "iou_threshold": 0.5,
+  "polygon_iou_requested": false,
+  "splits": {
+    "train": {
+      "split": "train",
+      "root": "D:\\dronevehicle_feasibility\\train",
+      "directories": {
+        "rgb": "...trainimg",
+        "ir": "...trainimgr",
+        "rgb_labels": "...trainlabel",
+        "ir_labels": "...trainlabelr"
+      },
+      "metrics": [
+        "bbox",
+        "polygon"
+      ],
+      "thresholds": [
+        0.3,
+        0.5,
+        0.7
+      ],
+      "polygon_iou_available": null,
+      "cells": [
+        {
+          "split": "train",
+          "metric": "bbox",
+          "iou_threshold": 0.3,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "train",
+          "metric": "bbox",
+          "iou_threshold": 0.5,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "train",
+          "metric": "bbox",
+          "iou_threshold": 0.7,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "train",
+          "metric": "polygon",
+          "iou_threshold": 0.3,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "train",
+          "metric": "polygon",
+          "iou_threshold": 0.5,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "train",
+          "metric": "polygon",
+          "iou_threshold": 0.7,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        }
+      ],
+      "verdict": {}
+    },
+    "val": {
+      "split": "val",
+      "root": "D:\\dronevehicle_feasibility\\val",
+      "directories": {
+        "rgb": "...valimg",
+        "ir": "...valimgr",
+        "rgb_labels": "...vallabel",
+        "ir_labels": "...vallabelr"
+      },
+      "metrics": [
+        "bbox",
+        "polygon"
+      ],
+      "thresholds": [
+        0.3,
+        0.5,
+        0.7
+      ],
+      "polygon_iou_available": null,
+      "cells": [
+        {
+          "split": "val",
+          "metric": "bbox",
+          "iou_threshold": 0.3,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "val",
+          "metric": "bbox",
+          "iou_threshold": 0.5,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "val",
+          "metric": "bbox",
+          "iou_threshold": 0.7,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "val",
+          "metric": "polygon",
+          "iou_threshold": 0.3,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "val",
+          "metric": "polygon",
+          "iou_threshold": 0.5,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "val",
+          "metric": "polygon",
+          "iou_threshold": 0.7,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        }
+      ],
+      "verdict": {}
+    },
+    "test": {
+      "split": "test",
+      "root": "D:\\dronevehicle_feasibility\\test",
+      "directories": {
+        "rgb": "...testimg",
+        "ir": "...testimgr",
+        "rgb_labels": "...testlabel",
+        "ir_labels": "...testlabelr"
+      },
+      "metrics": [
+        "bbox",
+        "polygon"
+      ],
+      "thresholds": [
+        0.3,
+        0.5,
+        0.7
+      ],
+      "polygon_iou_available": null,
+      "cells": [
+        {
+          "split": "test",
+          "metric": "bbox",
+          "iou_threshold": 0.3,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "test",
+          "metric": "bbox",
+          "iou_threshold": 0.5,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "test",
+          "metric": "bbox",
+          "iou_threshold": 0.7,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "test",
+          "metric": "polygon",
+          "iou_threshold": 0.3,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "test",
+          "metric": "polygon",
+          "iou_threshold": 0.5,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        },
+        {
+          "split": "test",
+          "metric": "polygon",
+          "iou_threshold": 0.7,
+          "rgb_objects": 0,
+          "ir_objects": 0,
+          "matched_same_class": 0,
+          "unmatched_rgb": 0,
+          "unmatched_ir": 0,
+          "unmatched_total": 0,
+          "unmatched_rate": null,
+          "unmatched_ir_by_class": {}
+        }
+      ],
+      "verdict": {}
+    }
+  }
+}

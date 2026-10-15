@@ -1,0 +1,7287 @@
+{
+  "data_root": "dataset",
+  "mode": "audit",
+  "iou_threshold": 0.5,
+  "polygon_iou_requested": false,
+  "splits": {
+    "train": {
+      "split": "train",
+      "root": "dataset\\train",
+      "matcher": {
+        "metric": "bbox",
+        "iou_threshold": 0.5
+      },
+      "directories": {
+        "rgb": "dataset\\train\\trainimg",
+        "ir": "dataset\\train\\trainimgr",
+        "rgb_labels": "dataset\\train\\trainlabel",
+        "ir_labels": "dataset\\train\\trainlabelr"
+      },
+      "counts": {
+        "keys": 17990,
+        "rgb_images": 17990,
+        "ir_images": 17990,
+        "rgb_xml": 17990,
+        "ir_xml": 17990,
+        "rgb_objects": 265287,
+        "ir_objects": 293495,
+        "matched_same_class": 254078,
+        "unmatched_rgb": 11209,
+        "unmatched_ir": 39417
+      },
+      "unmatched_by_class": {
+        "ir_only:car": 32560,
+        "ir_only:truck": 2422,
+        "rgb_only:car": 10215,
+        "rgb_only:feright car": 104,
+        "ir_only:bus": 1005,
+        "ir_only:feright car": 651,
+        "rgb_only:truck": 292,
+        "rgb_only:bus": 99,
+        "rgb_only:van": 407,
+        "ir_only:van": 826,
+        "ir_only:feright_car": 1953,
+        "rgb_only:feright_car": 91,
+        "rgb_only:truvk": 1
+      },
+      "duplicate_keys": {
+        "rgb_images": {},
+        "ir_images": {},
+        "rgb_labels": {},
+        "ir_labels": {}
+      },
+      "examples_of_unmatched": [
+        {
+          "key": "00002",
+          "rgb_xml": "dataset\\train\\trainlabel\\00002.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00002.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                671.0,
+                116.0,
+                723.0,
+                148.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                677.0,
+                157.0,
+                724.0,
+                182.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                678.0,
+                291.0,
+                733.0,
+                328.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                688.0,
+                337.0,
+                739.0,
+                362.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                686.0,
+                366.0,
+                732.0,
+                394.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00003",
+          "rgb_xml": "dataset\\train\\trainlabel\\00003.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00003.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                679.0,
+                478.0,
+                732.0,
+                510.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                680.0,
+                517.0,
+                734.0,
+                547.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                682.0,
+                550.0,
+                737.0,
+                587.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                671.0,
+                364.0,
+                718.0,
+                396.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00004",
+          "rgb_xml": "dataset\\train\\trainlabel\\00004.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00004.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                632.0,
+                542.0,
+                692.0,
+                571.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00007",
+          "rgb_xml": "dataset\\train\\trainlabel\\00007.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00007.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                162.0,
+                456.0,
+                223.0,
+                493.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                167.0,
+                365.0,
+                217.0,
+                392.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                167.0,
+                301.0,
+                223.0,
+                327.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                161.0,
+                206.0,
+                214.0,
+                227.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                168.0,
+                168.0,
+                217.0,
+                201.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                178.0,
+                135.0,
+                224.0,
+                155.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                462.0,
+                105.0,
+                518.0,
+                129.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                608.0,
+                459.0,
+                663.0,
+                485.0
+              ]
+            },
+            {
+              "class": "truck",
+              "bbox": [
+                591.0,
+                424.0,
+                660.0,
+                452.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                599.0,
+                384.0,
+                655.0,
+                415.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00008",
+          "rgb_xml": "dataset\\train\\trainlabel\\00008.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00008.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                387.0,
+                428.0,
+                445.0,
+                452.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                377.0,
+                196.0,
+                433.0,
+                221.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                371.0,
+                158.0,
+                433.0,
+                189.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                522.0,
+                200.0,
+                572.0,
+                224.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00009",
+          "rgb_xml": "dataset\\train\\trainlabel\\00009.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00009.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                92.0,
+                528.0,
+                141.0,
+                550.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                94.0,
+                495.0,
+                141.0,
+                517.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                354.0,
+                167.0,
+                411.0,
+                191.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                362.0,
+                232.0,
+                419.0,
+                258.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                367.0,
+                325.0,
+                422.0,
+                349.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                371.0,
+                358.0,
+                429.0,
+                385.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                490.0,
+                311.0,
+                552.0,
+                338.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                509.0,
+                349.0,
+                563.0,
+                376.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                547.0,
+                483.0,
+                597.0,
+                504.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                391.0,
+                438.0,
+                453.0,
+                466.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00010",
+          "rgb_xml": "dataset\\train\\trainlabel\\00010.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00010.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                399.0,
+                590.0,
+                454.0,
+                616.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                524.0,
+                577.0,
+                588.0,
+                609.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                392.0,
+                494.0,
+                451.0,
+                518.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                385.0,
+                425.0,
+                443.0,
+                451.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                389.0,
+                344.0,
+                446.0,
+                368.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                386.0,
+                301.0,
+                445.0,
+                324.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                384.0,
+                177.0,
+                439.0,
+                207.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                383.0,
+                149.0,
+                439.0,
+                171.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                389.0,
+                110.0,
+                443.0,
+                135.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                523.0,
+                103.0,
+                580.0,
+                129.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00011",
+          "rgb_xml": "dataset\\train\\trainlabel\\00011.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00011.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                533.0,
+                590.0,
+                593.0,
+                613.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                536.0,
+                551.0,
+                593.0,
+                576.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                532.0,
+                448.0,
+                589.0,
+                478.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                533.0,
+                415.0,
+                591.0,
+                441.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                527.0,
+                382.0,
+                581.0,
+                405.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                534.0,
+                283.0,
+                594.0,
+                308.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                390.0,
+                277.0,
+                450.0,
+                300.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                386.0,
+                308.0,
+                443.0,
+                331.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                389.0,
+                339.0,
+                446.0,
+                363.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                388.0,
+                370.0,
+                445.0,
+                396.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00012",
+          "rgb_xml": "dataset\\train\\trainlabel\\00012.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00012.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                334.0,
+                322.0,
+                357.0,
+                372.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                363.0,
+                311.0,
+                387.0,
+                372.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                395.0,
+                316.0,
+                419.0,
+                372.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                427.0,
+                326.0,
+                454.0,
+                379.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                459.0,
+                319.0,
+                482.0,
+                375.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                493.0,
+                326.0,
+                515.0,
+                378.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                526.0,
+                324.0,
+                548.0,
+                381.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                560.0,
+                319.0,
+                583.0,
+                379.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                408.0,
+                216.0,
+                474.0,
+                254.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                675.0,
+                324.0,
+                736.0,
+                361.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00013",
+          "rgb_xml": "dataset\\train\\trainlabel\\00013.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00013.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                406.0,
+                519.0,
+                473.0,
+                563.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                667.0,
+                500.0,
+                695.0,
+                560.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                662.0,
+                406.0,
+                688.0,
+                460.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                380.0,
+                415.0,
+                435.0,
+                441.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                383.0,
+                357.0,
+                441.0,
+                379.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                380.0,
+                319.0,
+                444.0,
+                350.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                389.0,
+                292.0,
+                439.0,
+                313.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                673.0,
+                301.0,
+                698.0,
+                358.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                652.0,
+                219.0,
+                679.0,
+                281.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                668.0,
+                129.0,
+                732.0,
+                162.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00014",
+          "rgb_xml": "dataset\\train\\trainlabel\\00014.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00014.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                666.0,
+                562.0,
+                696.0,
+                622.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                515.0,
+                367.0,
+                573.0,
+                394.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                436.0,
+                369.0,
+                498.0,
+                392.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                436.0,
+                207.0,
+                458.0,
+                258.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                470.0,
+                214.0,
+                492.0,
+                259.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                502.0,
+                204.0,
+                529.0,
+                260.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                531.0,
+                197.0,
+                560.0,
+                259.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                577.0,
+                206.0,
+                600.0,
+                256.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                610.0,
+                197.0,
+                630.0,
+                250.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                654.0,
+                203.0,
+                685.0,
+                260.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00015",
+          "rgb_xml": "dataset\\train\\trainlabel\\00015.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00015.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                424.0,
+                536.0,
+                451.0,
+                596.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                550.0,
+                527.0,
+                580.0,
+                593.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                602.0,
+                538.0,
+                625.0,
+                592.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                632.0,
+                529.0,
+                655.0,
+                590.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                680.0,
+                537.0,
+                715.0,
+                600.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                673.0,
+                399.0,
+                698.0,
+                456.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                675.0,
+                316.0,
+                702.0,
+                365.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                521.0,
+                411.0,
+                575.0,
+                432.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                522.0,
+                374.0,
+                575.0,
+                400.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                415.0,
+                392.0,
+                473.0,
+                416.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00016",
+          "rgb_xml": "dataset\\train\\trainlabel\\00016.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00016.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                408.0,
+                524.0,
+                471.0,
+                550.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                346.0,
+                242.0,
+                387.0,
+                260.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                347.0,
+                212.0,
+                393.0,
+                236.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                342.0,
+                179.0,
+                389.0,
+                200.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                338.0,
+                148.0,
+                394.0,
+                169.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                341.0,
+                116.0,
+                397.0,
+                144.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                505.0,
+                111.0,
+                561.0,
+                136.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                504.0,
+                159.0,
+                561.0,
+                180.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                514.0,
+                201.0,
+                564.0,
+                222.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                508.0,
+                238.0,
+                567.0,
+                261.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00017",
+          "rgb_xml": "dataset\\train\\trainlabel\\00017.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00017.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                689.0,
+                531.0,
+                747.0,
+                555.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                514.0,
+                561.0,
+                573.0,
+                584.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                520.0,
+                520.0,
+                572.0,
+                545.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                512.0,
+                476.0,
+                569.0,
+                499.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                511.0,
+                427.0,
+                572.0,
+                456.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                510.0,
+                394.0,
+                565.0,
+                417.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                505.0,
+                361.0,
+                562.0,
+                389.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                507.0,
+                332.0,
+                564.0,
+                355.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                511.0,
+                304.0,
+                564.0,
+                324.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                507.0,
+                272.0,
+                563.0,
+                294.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00018",
+          "rgb_xml": "dataset\\train\\trainlabel\\00018.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00018.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                345.0,
+                577.0,
+                405.0,
+                603.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                346.0,
+                544.0,
+                408.0,
+                569.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                348.0,
+                510.0,
+                407.0,
+                535.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                351.0,
+                353.0,
+                410.0,
+                376.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                506.0,
+                314.0,
+                563.0,
+                337.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                509.0,
+                347.0,
+                568.0,
+                369.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                509.0,
+                378.0,
+                567.0,
+                401.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                513.0,
+                408.0,
+                573.0,
+                433.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                518.0,
+                444.0,
+                566.0,
+                463.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                513.0,
+                511.0,
+                574.0,
+                538.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00019",
+          "rgb_xml": "dataset\\train\\trainlabel\\00019.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00019.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                371.0,
+                268.0,
+                390.0,
+                313.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                401.0,
+                266.0,
+                427.0,
+                325.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                506.0,
+                396.0,
+                530.0,
+                451.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                140.0,
+                405.0,
+                163.0,
+                456.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                105.0,
+                413.0,
+                129.0,
+                462.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                512.0,
+                274.0,
+                531.0,
+                315.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                546.0,
+                272.0,
+                568.0,
+                326.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                613.0,
+                268.0,
+                638.0,
+                319.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                232.0,
+                86.0,
+                252.0,
+                125.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00020",
+          "rgb_xml": "dataset\\train\\trainlabel\\00020.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00020.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                548.0,
+                153.0,
+                606.0,
+                179.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                371.0,
+                148.0,
+                423.0,
+                171.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                445.0,
+                144.0,
+                502.0,
+                168.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                483.0,
+                195.0,
+                538.0,
+                249.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                549.0,
+                144.0,
+                607.0,
+                170.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                620.0,
+                145.0,
+                684.0,
+                175.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                709.0,
+                147.0,
+                754.0,
+                174.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00022",
+          "rgb_xml": "dataset\\train\\trainlabel\\00022.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00022.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                125.0,
+                405.0,
+                151.0,
+                462.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                159.0,
+                406.0,
+                183.0,
+                455.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                192.0,
+                551.0,
+                240.0,
+                611.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                726.0,
+                405.0,
+                751.0,
+                466.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00023",
+          "rgb_xml": "dataset\\train\\trainlabel\\00023.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00023.xml",
+          "rgb_only": [
+            {
+              "class": "feright car",
+              "bbox": [
+                314.0,
+                431.0,
+                342.0,
+                496.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                237.0,
+                570.0,
+                283.0,
+                615.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                247.0,
+                432.0,
+                274.0,
+                489.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                283.0,
+                430.0,
+                309.0,
+                489.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                349.0,
+                434.0,
+                374.0,
+                486.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                531.0,
+                435.0,
+                555.0,
+                493.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                570.0,
+                432.0,
+                591.0,
+                491.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                630.0,
+                438.0,
+                660.0,
+                498.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                275.0,
+                113.0,
+                334.0,
+                156.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                458.0,
+                118.0,
+                507.0,
+                167.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                657.0,
+                116.0,
+                689.0,
+                162.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00024",
+          "rgb_xml": "dataset\\train\\trainlabel\\00024.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00024.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                183.0,
+                586.0,
+                210.0,
+                633.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                679.0,
+                574.0,
+                713.0,
+                629.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                379.0,
+                435.0,
+                402.0,
+                497.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                347.0,
+                439.0,
+                368.0,
+                497.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                311.0,
+                437.0,
+                331.0,
+                486.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                247.0,
+                436.0,
+                271.0,
+                501.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                449.0,
+                93.0,
+                472.0,
+                139.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00025",
+          "rgb_xml": "dataset\\train\\trainlabel\\00025.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00025.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                595.0,
+                401.0,
+                618.0,
+                450.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                121.0,
+                550.0,
+                143.0,
+                607.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                235.0,
+                550.0,
+                257.0,
+                608.0
+              ]
+            },
+            {
+              "class": "feright car",
+              "bbox": [
+                276.0,
+                539.0,
+                302.0,
+                613.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                314.0,
+                543.0,
+                336.0,
+                597.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                141.0,
+                391.0,
+                168.0,
+                447.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                177.0,
+                391.0,
+                200.0,
+                447.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                212.0,
+                394.0,
+                236.0,
+                451.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                241.0,
+                389.0,
+                273.0,
+                449.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                280.0,
+                393.0,
+                301.0,
+                453.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                309.0,
+                392.0,
+                330.0,
+                443.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00028",
+          "rgb_xml": "dataset\\train\\trainlabel\\00028.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00028.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                165.0,
+                563.0,
+                220.0,
+                589.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                176.0,
+                253.0,
+                202.0,
+                318.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                175.0,
+                146.0,
+                199.0,
+                211.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00029",
+          "rgb_xml": "dataset\\train\\trainlabel\\00029.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00029.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                120.0,
+                185.0,
+                155.0,
+                245.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                196.0,
+                240.0,
+                218.0,
+                300.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                566.0,
+                498.0,
+                626.0,
+                521.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                439.0,
+                198.0,
+                460.0,
+                238.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00030",
+          "rgb_xml": "dataset\\train\\trainlabel\\00030.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00030.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                208.0,
+                576.0,
+                234.0,
+                628.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                415.0,
+                520.0,
+                441.0,
+                586.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                455.0,
+                533.0,
+                478.0,
+                591.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                218.0,
+                196.0,
+                240.0,
+                250.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                217.0,
+                128.0,
+                240.0,
+                184.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                290.0,
+                83.0,
+                312.0,
+                125.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00031",
+          "rgb_xml": "dataset\\train\\trainlabel\\00031.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00031.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                227.0,
+                558.0,
+                248.0,
+                616.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                301.0,
+                425.0,
+                324.0,
+                481.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                408.0,
+                397.0,
+                430.0,
+                462.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                440.0,
+                390.0,
+                464.0,
+                447.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                544.0,
+                399.0,
+                566.0,
+                454.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                579.0,
+                397.0,
+                604.0,
+                456.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                613.0,
+                395.0,
+                639.0,
+                454.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                650.0,
+                395.0,
+                678.0,
+                455.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                685.0,
+                392.0,
+                708.0,
+                451.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                717.0,
+                391.0,
+                743.0,
+                451.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00032",
+          "rgb_xml": "dataset\\train\\trainlabel\\00032.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00032.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                110.0,
+                366.0,
+                135.0,
+                428.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                146.0,
+                360.0,
+                170.0,
+                417.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                253.0,
+                369.0,
+                278.0,
+                427.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                289.0,
+                365.0,
+                314.0,
+                426.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                324.0,
+                364.0,
+                350.0,
+                425.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                357.0,
+                366.0,
+                388.0,
+                426.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                393.0,
+                363.0,
+                416.0,
+                420.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                425.0,
+                363.0,
+                448.0,
+                416.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                493.0,
+                365.0,
+                513.0,
+                418.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                524.0,
+                370.0,
+                547.0,
+                431.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00033",
+          "rgb_xml": "dataset\\train\\trainlabel\\00033.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00033.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                135.0,
+                437.0,
+                163.0,
+                499.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                172.0,
+                430.0,
+                207.0,
+                486.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                256.0,
+                444.0,
+                279.0,
+                503.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                329.0,
+                443.0,
+                351.0,
+                496.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                364.0,
+                444.0,
+                387.0,
+                502.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                441.0,
+                439.0,
+                466.0,
+                498.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                610.0,
+                439.0,
+                635.0,
+                495.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                658.0,
+                445.0,
+                680.0,
+                503.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                690.0,
+                447.0,
+                711.0,
+                504.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                530.0,
+                442.0,
+                553.0,
+                486.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00034",
+          "rgb_xml": "dataset\\train\\trainlabel\\00034.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00034.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                161.0,
+                437.0,
+                185.0,
+                497.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                201.0,
+                440.0,
+                223.0,
+                492.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                289.0,
+                441.0,
+                308.0,
+                496.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                315.0,
+                440.0,
+                342.0,
+                496.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                349.0,
+                439.0,
+                372.0,
+                488.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                414.0,
+                442.0,
+                436.0,
+                498.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                241.0,
+                288.0,
+                265.0,
+                346.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                276.0,
+                287.0,
+                298.0,
+                347.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                314.0,
+                284.0,
+                335.0,
+                340.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                346.0,
+                285.0,
+                371.0,
+                346.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00035",
+          "rgb_xml": "dataset\\train\\trainlabel\\00035.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00035.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                618.0,
+                389.0,
+                638.0,
+                440.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                229.0,
+                371.0,
+                253.0,
+                430.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                307.0,
+                386.0,
+                330.0,
+                440.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                343.0,
+                381.0,
+                365.0,
+                441.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                377.0,
+                399.0,
+                394.0,
+                448.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                476.0,
+                384.0,
+                504.0,
+                442.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                535.0,
+                276.0,
+                596.0,
+                310.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                575.0,
+                391.0,
+                596.0,
+                445.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                610.0,
+                391.0,
+                630.0,
+                442.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                647.0,
+                392.0,
+                670.0,
+                447.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00036",
+          "rgb_xml": "dataset\\train\\trainlabel\\00036.xml",
+          "ir_xml": "dataset\\train\\trainlabelr\\00036.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                284.0,
+                594.0,
+                347.0,
+                625.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                433.0,
+                579.0,
+                460.0,
+                627.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                307.0,
+                501.0,
+                367.0,
+                526.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                322.0,
+                395.0,
+                368.0,
+                419.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                332.0,
+                365.0,
+                388.0,
+                394.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                335.0,
+                328.0,
+                389.0,
+                358.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                356.0,
+                254.0,
+                414.0,
+                283.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "val": {
+      "split": "val",
+      "root": "dataset\\val",
+      "matcher": {
+        "metric": "bbox",
+        "iou_threshold": 0.5
+      },
+      "directories": {
+        "rgb": "dataset\\val\\valimg",
+        "ir": "dataset\\val\\valimgr",
+        "rgb_labels": "dataset\\val\\vallabel",
+        "ir_labels": "dataset\\val\\vallabelr"
+      },
+      "counts": {
+        "keys": 1469,
+        "rgb_images": 1469,
+        "ir_images": 1469,
+        "rgb_xml": 1469,
+        "ir_xml": 1469,
+        "rgb_objects": 21198,
+        "ir_objects": 23035,
+        "matched_same_class": 20296,
+        "unmatched_rgb": 902,
+        "unmatched_ir": 2739
+      },
+      "unmatched_by_class": {
+        "ir_only:car": 2228,
+        "ir_only:bus": 53,
+        "ir_only:truck": 166,
+        "ir_only:feright car": 130,
+        "rgb_only:feright car": 17,
+        "rgb_only:car": 795,
+        "rgb_only:truck": 32,
+        "rgb_only:bus": 14,
+        "ir_only:feright_car": 101,
+        "ir_only:van": 61,
+        "rgb_only:van": 38,
+        "rgb_only:feright_car": 6
+      },
+      "duplicate_keys": {
+        "rgb_images": {},
+        "ir_images": {},
+        "rgb_labels": {},
+        "ir_labels": {}
+      },
+      "examples_of_unmatched": [
+        {
+          "key": "00001",
+          "rgb_xml": "dataset\\val\\vallabel\\00001.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00001.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                140.0,
+                547.0,
+                168.0,
+                607.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                338.0,
+                513.0,
+                367.0,
+                574.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                374.0,
+                516.0,
+                400.0,
+                567.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                557.0,
+                505.0,
+                584.0,
+                555.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                337.0,
+                299.0,
+                359.0,
+                347.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                405.0,
+                286.0,
+                430.0,
+                343.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                436.0,
+                295.0,
+                462.0,
+                345.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                101.0,
+                190.0,
+                166.0,
+                249.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                135.0,
+                163.0,
+                197.0,
+                233.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                175.0,
+                149.0,
+                226.0,
+                207.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00002",
+          "rgb_xml": "dataset\\val\\vallabel\\00002.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00002.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                507.0,
+                435.0,
+                528.0,
+                494.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                465.0,
+                434.0,
+                492.0,
+                493.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                495.0,
+                226.0,
+                526.0,
+                279.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                455.0,
+                219.0,
+                484.0,
+                286.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                423.0,
+                226.0,
+                452.0,
+                282.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                391.0,
+                226.0,
+                415.0,
+                286.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                351.0,
+                219.0,
+                381.0,
+                282.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                319.0,
+                221.0,
+                344.0,
+                280.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                284.0,
+                211.0,
+                309.0,
+                266.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                248.0,
+                215.0,
+                274.0,
+                271.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00003",
+          "rgb_xml": "dataset\\val\\vallabel\\00003.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00003.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                88.0,
+                433.0,
+                122.0,
+                498.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                175.0,
+                431.0,
+                199.0,
+                491.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                213.0,
+                432.0,
+                237.0,
+                489.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                500.0,
+                489.0,
+                556.0,
+                518.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                95.0,
+                220.0,
+                122.0,
+                283.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                127.0,
+                222.0,
+                159.0,
+                281.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                161.0,
+                214.0,
+                192.0,
+                282.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                205.0,
+                216.0,
+                233.0,
+                278.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                112.0,
+                72.0,
+                159.0,
+                140.0
+              ]
+            },
+            {
+              "class": "bus",
+              "bbox": [
+                333.0,
+                265.0,
+                368.0,
+                403.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00004",
+          "rgb_xml": "dataset\\val\\vallabel\\00004.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00004.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "bus",
+              "bbox": [
+                315.0,
+                190.0,
+                354.0,
+                347.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                182.0,
+                93.0,
+                234.0,
+                120.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                101.0,
+                384.0,
+                147.0,
+                454.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                113.0,
+                533.0,
+                143.0,
+                591.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                146.0,
+                524.0,
+                175.0,
+                594.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                188.0,
+                535.0,
+                216.0,
+                587.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                466.0,
+                289.0,
+                497.0,
+                345.0
+              ]
+            },
+            {
+              "class": "truck",
+              "bbox": [
+                596.0,
+                312.0,
+                660.0,
+                374.0
+              ]
+            },
+            {
+              "class": "truck",
+              "bbox": [
+                655.0,
+                312.0,
+                713.0,
+                380.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00005",
+          "rgb_xml": "dataset\\val\\vallabel\\00005.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00005.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "bus",
+              "bbox": [
+                315.0,
+                551.0,
+                350.0,
+                642.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                105.0,
+                333.0,
+                134.0,
+                393.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                181.0,
+                334.0,
+                211.0,
+                393.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                89.0,
+                72.0,
+                127.0,
+                138.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00006",
+          "rgb_xml": "dataset\\val\\vallabel\\00006.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00006.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                317.0,
+                243.0,
+                345.0,
+                308.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                356.0,
+                249.0,
+                378.0,
+                295.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                515.0,
+                247.0,
+                539.0,
+                296.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00007",
+          "rgb_xml": "dataset\\val\\vallabel\\00007.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00007.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                134.0,
+                131.0,
+                185.0,
+                195.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                176.0,
+                122.0,
+                226.0,
+                191.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                235.0,
+                129.0,
+                274.0,
+                192.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                273.0,
+                132.0,
+                329.0,
+                196.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                314.0,
+                134.0,
+                363.0,
+                195.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                157.0,
+                264.0,
+                183.0,
+                324.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                195.0,
+                272.0,
+                217.0,
+                317.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                297.0,
+                260.0,
+                326.0,
+                324.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                583.0,
+                132.0,
+                619.0,
+                193.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                628.0,
+                136.0,
+                653.0,
+                197.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00008",
+          "rgb_xml": "dataset\\val\\vallabel\\00008.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00008.xml",
+          "rgb_only": [
+            {
+              "class": "feright car",
+              "bbox": [
+                615.0,
+                400.0,
+                666.0,
+                425.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                248.0,
+                109.0,
+                281.0,
+                169.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                292.0,
+                114.0,
+                315.0,
+                174.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                318.0,
+                107.0,
+                359.0,
+                176.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                473.0,
+                87.0,
+                500.0,
+                140.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                513.0,
+                75.0,
+                548.0,
+                145.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                419.0,
+                238.0,
+                468.0,
+                302.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                385.0,
+                253.0,
+                406.0,
+                307.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                342.0,
+                244.0,
+                369.0,
+                301.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                236.0,
+                250.0,
+                263.0,
+                308.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                166.0,
+                235.0,
+                191.0,
+                288.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00009",
+          "rgb_xml": "dataset\\val\\vallabel\\00009.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00009.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                264.0,
+                261.0,
+                294.0,
+                319.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                304.0,
+                264.0,
+                329.0,
+                323.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                331.0,
+                259.0,
+                372.0,
+                328.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                484.0,
+                231.0,
+                510.0,
+                291.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                142.0,
+                383.0,
+                165.0,
+                445.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                247.0,
+                399.0,
+                272.0,
+                458.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                356.0,
+                394.0,
+                381.0,
+                451.0
+              ]
+            },
+            {
+              "class": "feright car",
+              "bbox": [
+                396.0,
+                402.0,
+                417.0,
+                456.0
+              ]
+            },
+            {
+              "class": "feright car",
+              "bbox": [
+                522.0,
+                228.0,
+                557.0,
+                294.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                661.0,
+                164.0,
+                721.0,
+                208.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00010",
+          "rgb_xml": "dataset\\val\\vallabel\\00010.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00010.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                196.0,
+                225.0,
+                245.0,
+                292.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                251.0,
+                234.0,
+                291.0,
+                292.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                450.0,
+                238.0,
+                492.0,
+                299.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                540.0,
+                199.0,
+                570.0,
+                264.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                379.0,
+                378.0,
+                418.0,
+                451.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                324.0,
+                378.0,
+                353.0,
+                446.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                246.0,
+                375.0,
+                276.0,
+                436.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                209.0,
+                379.0,
+                237.0,
+                446.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                169.0,
+                380.0,
+                200.0,
+                443.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                423.0,
+                444.0,
+                493.0,
+                470.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00013",
+          "rgb_xml": "dataset\\val\\vallabel\\00013.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00013.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                104.0,
+                389.0,
+                130.0,
+                445.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                134.0,
+                380.0,
+                161.0,
+                436.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                105.0,
+                443.0,
+                170.0,
+                475.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                252.0,
+                379.0,
+                288.0,
+                440.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                287.0,
+                375.0,
+                317.0,
+                444.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                318.0,
+                383.0,
+                347.0,
+                455.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                351.0,
+                377.0,
+                383.0,
+                440.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                310.0,
+                548.0,
+                338.0,
+                614.0
+              ]
+            },
+            {
+              "class": "feright car",
+              "bbox": [
+                250.0,
+                543.0,
+                287.0,
+                637.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                220.0,
+                552.0,
+                249.0,
+                617.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00014",
+          "rgb_xml": "dataset\\val\\vallabel\\00014.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00014.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                89.0,
+                277.0,
+                122.0,
+                346.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                237.0,
+                290.0,
+                265.0,
+                354.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                268.0,
+                294.0,
+                299.0,
+                357.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                303.0,
+                296.0,
+                332.0,
+                361.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                338.0,
+                287.0,
+                365.0,
+                352.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                452.0,
+                288.0,
+                478.0,
+                346.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                478.0,
+                284.0,
+                512.0,
+                349.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                514.0,
+                297.0,
+                543.0,
+                363.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                550.0,
+                295.0,
+                575.0,
+                351.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                662.0,
+                300.0,
+                691.0,
+                363.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00015",
+          "rgb_xml": "dataset\\val\\vallabel\\00015.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00015.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                92.0,
+                201.0,
+                124.0,
+                271.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                238.0,
+                201.0,
+                266.0,
+                254.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                267.0,
+                199.0,
+                302.0,
+                272.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                307.0,
+                196.0,
+                341.0,
+                265.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                424.0,
+                213.0,
+                457.0,
+                280.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                399.0,
+                382.0,
+                431.0,
+                448.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                327.0,
+                376.0,
+                358.0,
+                443.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                119.0,
+                364.0,
+                156.0,
+                436.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                163.0,
+                375.0,
+                193.0,
+                440.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                197.0,
+                379.0,
+                233.0,
+                445.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00016",
+          "rgb_xml": "dataset\\val\\vallabel\\00016.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00016.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                222.0,
+                256.0,
+                259.0,
+                329.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                269.0,
+                252.0,
+                297.0,
+                320.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                306.0,
+                250.0,
+                338.0,
+                320.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                394.0,
+                430.0,
+                432.0,
+                503.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                350.0,
+                422.0,
+                387.0,
+                501.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                314.0,
+                429.0,
+                344.0,
+                492.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                146.0,
+                417.0,
+                179.0,
+                493.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                109.0,
+                426.0,
+                141.0,
+                494.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                192.0,
+                431.0,
+                221.0,
+                492.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00018",
+          "rgb_xml": "dataset\\val\\vallabel\\00018.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00018.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                716.0,
+                171.0,
+                754.0,
+                230.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                722.0,
+                184.0,
+                760.0,
+                243.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00025",
+          "rgb_xml": "dataset\\val\\vallabel\\00025.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00025.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                590.0,
+                103.0,
+                625.0,
+                173.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00030",
+          "rgb_xml": "dataset\\val\\vallabel\\00030.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00030.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                448.0,
+                291.0,
+                478.0,
+                351.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00046",
+          "rgb_xml": "dataset\\val\\vallabel\\00046.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00046.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                304.0,
+                535.0,
+                375.0,
+                568.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                327.0,
+                531.0,
+                398.0,
+                564.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00052",
+          "rgb_xml": "dataset\\val\\vallabel\\00052.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00052.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                479.0,
+                351.0,
+                548.0,
+                379.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                504.0,
+                346.0,
+                577.0,
+                379.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00060",
+          "rgb_xml": "dataset\\val\\vallabel\\00060.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00060.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                225.0,
+                528.0,
+                283.0,
+                567.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                232.0,
+                489.0,
+                287.0,
+                522.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                229.0,
+                522.0,
+                290.0,
+                554.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00063",
+          "rgb_xml": "dataset\\val\\vallabel\\00063.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00063.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                540.0,
+                541.0,
+                572.0,
+                603.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00085",
+          "rgb_xml": "dataset\\val\\vallabel\\00085.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00085.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                284.0,
+                248.0,
+                324.0,
+                275.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                273.0,
+                327.0,
+                312.0,
+                347.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                279.0,
+                299.0,
+                317.0,
+                316.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                265.0,
+                323.0,
+                306.0,
+                353.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                581.0,
+                592.0,
+                631.0,
+                627.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00086",
+          "rgb_xml": "dataset\\val\\vallabel\\00086.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00086.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                372.0,
+                284.0,
+                388.0,
+                307.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                371.0,
+                274.0,
+                394.0,
+                304.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                284.0,
+                212.0,
+                298.0,
+                242.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                263.0,
+                207.0,
+                281.0,
+                241.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00087",
+          "rgb_xml": "dataset\\val\\vallabel\\00087.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00087.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                294.0,
+                242.0,
+                353.0,
+                265.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                243.0,
+                447.0,
+                269.0,
+                513.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                127.0,
+                525.0,
+                165.0,
+                593.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                442.0,
+                214.0,
+                503.0,
+                246.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                449.0,
+                319.0,
+                504.0,
+                342.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                441.0,
+                425.0,
+                503.0,
+                452.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                455.0,
+                471.0,
+                508.0,
+                498.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00088",
+          "rgb_xml": "dataset\\val\\vallabel\\00088.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00088.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                547.0,
+                421.0,
+                571.0,
+                474.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                558.0,
+                208.0,
+                622.0,
+                233.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                536.0,
+                423.0,
+                561.0,
+                475.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                505.0,
+                408.0,
+                531.0,
+                473.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                389.0,
+                479.0,
+                426.0,
+                547.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                350.0,
+                478.0,
+                385.0,
+                540.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                311.0,
+                488.0,
+                338.0,
+                546.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                718.0,
+                245.0,
+                767.0,
+                277.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00089",
+          "rgb_xml": "dataset\\val\\vallabel\\00089.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00089.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                216.0,
+                141.0,
+                259.0,
+                204.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                391.0,
+                291.0,
+                456.0,
+                334.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                431.0,
+                415.0,
+                493.0,
+                464.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                415.0,
+                450.0,
+                473.0,
+                498.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                404.0,
+                496.0,
+                466.0,
+                541.0
+              ]
+            },
+            {
+              "class": "bus",
+              "bbox": [
+                693.0,
+                150.0,
+                753.0,
+                247.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00090",
+          "rgb_xml": "dataset\\val\\vallabel\\00090.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00090.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "bus",
+              "bbox": [
+                135.0,
+                220.0,
+                200.0,
+                308.0
+              ]
+            },
+            {
+              "class": "bus",
+              "bbox": [
+                169.0,
+                237.0,
+                229.0,
+                321.0
+              ]
+            },
+            {
+              "class": "bus",
+              "bbox": [
+                185.0,
+                248.0,
+                268.0,
+                354.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                276.0,
+                287.0,
+                318.0,
+                344.0
+              ]
+            },
+            {
+              "class": "bus",
+              "bbox": [
+                286.0,
+                296.0,
+                357.0,
+                391.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00093",
+          "rgb_xml": "dataset\\val\\vallabel\\00093.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00093.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                341.0,
+                86.0,
+                364.0,
+                136.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                352.0,
+                183.0,
+                379.0,
+                245.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                409.0,
+                219.0,
+                439.0,
+                282.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                342.0,
+                364.0,
+                366.0,
+                427.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                341.0,
+                564.0,
+                367.0,
+                625.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                549.0,
+                112.0,
+                603.0,
+                133.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                348.0,
+                88.0,
+                373.0,
+                143.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                357.0,
+                192.0,
+                386.0,
+                255.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                416.0,
+                230.0,
+                449.0,
+                296.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                346.0,
+                375.0,
+                375.0,
+                441.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                347.0,
+                573.0,
+                374.0,
+                634.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                557.0,
+                106.0,
+                607.0,
+                128.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00094",
+          "rgb_xml": "dataset\\val\\vallabel\\00094.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00094.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                246.0,
+                102.0,
+                308.0,
+                147.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00095",
+          "rgb_xml": "dataset\\val\\vallabel\\00095.xml",
+          "ir_xml": "dataset\\val\\vallabelr\\00095.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                630.0,
+                140.0,
+                680.0,
+                198.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "test": {
+      "split": "test",
+      "root": "dataset\\test",
+      "matcher": {
+        "metric": "bbox",
+        "iou_threshold": 0.5
+      },
+      "directories": {
+        "rgb": "dataset\\test\\testimg",
+        "ir": "dataset\\test\\testimgr",
+        "rgb_labels": "dataset\\test\\testlabel",
+        "ir_labels": "dataset\\test\\testlabelr"
+      },
+      "counts": {
+        "keys": 8980,
+        "rgb_images": 8980,
+        "ir_images": 8980,
+        "rgb_xml": 8980,
+        "ir_xml": 8980,
+        "rgb_objects": 134915,
+        "ir_objects": 149975,
+        "matched_same_class": 128911,
+        "unmatched_rgb": 6004,
+        "unmatched_ir": 21064
+      },
+      "unmatched_by_class": {
+        "ir_only:car": 17356,
+        "ir_only:bus": 374,
+        "ir_only:feright car": 242,
+        "rgb_only:car": 5490,
+        "ir_only:truck": 1660,
+        "rgb_only:feright car": 49,
+        "rgb_only:truck": 149,
+        "rgb_only:bus": 65,
+        "rgb_only:van": 198,
+        "ir_only:van": 514,
+        "ir_only:feright_car": 918,
+        "rgb_only:feright_car": 53
+      },
+      "duplicate_keys": {
+        "rgb_images": {},
+        "ir_images": {},
+        "rgb_labels": {},
+        "ir_labels": {}
+      },
+      "examples_of_unmatched": [
+        {
+          "key": "00001",
+          "rgb_xml": "dataset\\test\\testlabel\\00001.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00001.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                85.0,
+                375.0,
+                118.0,
+                445.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                118.0,
+                372.0,
+                151.0,
+                443.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                158.0,
+                376.0,
+                191.0,
+                447.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                194.0,
+                388.0,
+                227.0,
+                447.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                148.0,
+                222.0,
+                178.0,
+                281.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                187.0,
+                221.0,
+                213.0,
+                282.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                248.0,
+                216.0,
+                280.0,
+                283.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                288.0,
+                211.0,
+                328.0,
+                283.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                332.0,
+                295.0,
+                403.0,
+                331.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                405.0,
+                296.0,
+                472.0,
+                330.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00002",
+          "rgb_xml": "dataset\\test\\testlabel\\00002.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00002.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                132.0,
+                261.0,
+                173.0,
+                331.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                183.0,
+                259.0,
+                211.0,
+                331.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                218.0,
+                264.0,
+                249.0,
+                333.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                258.0,
+                257.0,
+                286.0,
+                326.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                292.0,
+                265.0,
+                321.0,
+                325.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                323.0,
+                276.0,
+                354.0,
+                347.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                424.0,
+                279.0,
+                450.0,
+                342.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                456.0,
+                272.0,
+                485.0,
+                342.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                517.0,
+                327.0,
+                590.0,
+                367.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                608.0,
+                388.0,
+                675.0,
+                421.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00003",
+          "rgb_xml": "dataset\\test\\testlabel\\00003.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00003.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                327.0,
+                111.0,
+                399.0,
+                142.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                494.0,
+                161.0,
+                564.0,
+                197.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                320.0,
+                199.0,
+                390.0,
+                228.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                494.0,
+                207.0,
+                564.0,
+                235.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                492.0,
+                241.0,
+                562.0,
+                271.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                321.0,
+                237.0,
+                390.0,
+                268.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                332.0,
+                292.0,
+                397.0,
+                319.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                324.0,
+                327.0,
+                386.0,
+                354.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                335.0,
+                362.0,
+                401.0,
+                392.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                329.0,
+                397.0,
+                400.0,
+                433.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00004",
+          "rgb_xml": "dataset\\test\\testlabel\\00004.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00004.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                358.0,
+                172.0,
+                423.0,
+                204.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                351.0,
+                227.0,
+                425.0,
+                261.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                354.0,
+                267.0,
+                418.0,
+                294.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                341.0,
+                322.0,
+                421.0,
+                355.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                339.0,
+                367.0,
+                417.0,
+                396.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                343.0,
+                403.0,
+                418.0,
+                435.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                334.0,
+                496.0,
+                407.0,
+                527.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                333.0,
+                537.0,
+                408.0,
+                573.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                343.0,
+                596.0,
+                414.0,
+                626.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                519.0,
+                589.0,
+                597.0,
+                619.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00005",
+          "rgb_xml": "dataset\\test\\testlabel\\00005.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00005.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                89.0,
+                339.0,
+                159.0,
+                368.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                378.0,
+                590.0,
+                456.0,
+                627.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                385.0,
+                532.0,
+                451.0,
+                567.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                563.0,
+                531.0,
+                634.0,
+                567.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                555.0,
+                480.0,
+                630.0,
+                522.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                561.0,
+                401.0,
+                631.0,
+                431.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                566.0,
+                306.0,
+                643.0,
+                338.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                576.0,
+                266.0,
+                639.0,
+                298.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                570.0,
+                230.0,
+                639.0,
+                259.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                558.0,
+                190.0,
+                614.0,
+                218.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00006",
+          "rgb_xml": "dataset\\test\\testlabel\\00006.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00006.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                89.0,
+                558.0,
+                163.0,
+                606.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                432.0,
+                320.0,
+                503.0,
+                347.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                595.0,
+                254.0,
+                665.0,
+                315.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                626.0,
+                163.0,
+                696.0,
+                195.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                431.0,
+                267.0,
+                496.0,
+                303.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                444.0,
+                166.0,
+                511.0,
+                199.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00007",
+          "rgb_xml": "dataset\\test\\testlabel\\00007.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00007.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                152.0,
+                183.0,
+                217.0,
+                216.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                142.0,
+                242.0,
+                222.0,
+                270.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                243.0,
+                260.0,
+                318.0,
+                316.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                399.0,
+                253.0,
+                479.0,
+                316.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                491.0,
+                227.0,
+                570.0,
+                264.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                481.0,
+                161.0,
+                549.0,
+                194.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                479.0,
+                119.0,
+                558.0,
+                154.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                180.0,
+                397.0,
+                258.0,
+                462.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                663.0,
+                550.0,
+                739.0,
+                585.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                651.0,
+                398.0,
+                730.0,
+                438.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00008",
+          "rgb_xml": "dataset\\test\\testlabel\\00008.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00008.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                87.0,
+                110.0,
+                166.0,
+                140.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                268.0,
+                90.0,
+                352.0,
+                124.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                87.0,
+                147.0,
+                164.0,
+                184.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                89.0,
+                189.0,
+                158.0,
+                222.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                86.0,
+                282.0,
+                164.0,
+                318.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                84.0,
+                322.0,
+                165.0,
+                356.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                83.0,
+                360.0,
+                157.0,
+                389.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                88.0,
+                397.0,
+                155.0,
+                430.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                88.0,
+                436.0,
+                151.0,
+                468.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                86.0,
+                541.0,
+                145.0,
+                571.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00009",
+          "rgb_xml": "dataset\\test\\testlabel\\00009.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00009.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "bus",
+              "bbox": [
+                393.0,
+                76.0,
+                422.0,
+                147.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                259.0,
+                202.0,
+                325.0,
+                233.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                256.0,
+                238.0,
+                325.0,
+                270.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                432.0,
+                225.0,
+                502.0,
+                257.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                436.0,
+                273.0,
+                505.0,
+                305.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                440.0,
+                319.0,
+                503.0,
+                350.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                435.0,
+                393.0,
+                506.0,
+                427.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                254.0,
+                410.0,
+                330.0,
+                441.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                253.0,
+                490.0,
+                322.0,
+                523.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                447.0,
+                554.0,
+                518.0,
+                585.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00010",
+          "rgb_xml": "dataset\\test\\testlabel\\00010.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00010.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                299.0,
+                233.0,
+                331.0,
+                309.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                162.0,
+                319.0,
+                238.0,
+                348.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                155.0,
+                513.0,
+                234.0,
+                549.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                152.0,
+                571.0,
+                230.0,
+                622.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                338.0,
+                492.0,
+                416.0,
+                524.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                335.0,
+                411.0,
+                407.0,
+                446.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                324.0,
+                374.0,
+                404.0,
+                406.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                683.0,
+                162.0,
+                761.0,
+                197.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                679.0,
+                203.0,
+                757.0,
+                234.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                682.0,
+                379.0,
+                762.0,
+                411.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00011",
+          "rgb_xml": "dataset\\test\\testlabel\\00011.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00011.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                161.0,
+                320.0,
+                233.0,
+                387.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                181.0,
+                360.0,
+                255.0,
+                425.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                504.0,
+                506.0,
+                581.0,
+                539.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                504.0,
+                563.0,
+                579.0,
+                609.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                159.0,
+                569.0,
+                222.0,
+                599.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                191.0,
+                416.0,
+                254.0,
+                468.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                684.0,
+                485.0,
+                758.0,
+                519.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                669.0,
+                364.0,
+                750.0,
+                396.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                684.0,
+                403.0,
+                759.0,
+                438.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                641.0,
+                220.0,
+                677.0,
+                299.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00012",
+          "rgb_xml": "dataset\\test\\testlabel\\00012.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00012.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                342.0,
+                589.0,
+                417.0,
+                622.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                543.0,
+                569.0,
+                617.0,
+                603.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                559.0,
+                464.0,
+                631.0,
+                521.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                570.0,
+                407.0,
+                645.0,
+                472.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                559.0,
+                363.0,
+                629.0,
+                426.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                538.0,
+                322.0,
+                607.0,
+                388.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                361.0,
+                322.0,
+                393.0,
+                395.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                306.0,
+                465.0,
+                384.0,
+                514.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                266.0,
+                402.0,
+                336.0,
+                473.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                302.0,
+                311.0,
+                335.0,
+                380.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00013",
+          "rgb_xml": "dataset\\test\\testlabel\\00013.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00013.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                567.0,
+                291.0,
+                597.0,
+                360.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                623.0,
+                304.0,
+                655.0,
+                376.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                529.0,
+                385.0,
+                596.0,
+                453.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                568.0,
+                448.0,
+                649.0,
+                494.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                216.0,
+                548.0,
+                294.0,
+                581.0
+              ]
+            },
+            {
+              "class": "feright car",
+              "bbox": [
+                249.0,
+                357.0,
+                286.0,
+                451.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                211.0,
+                593.0,
+                291.0,
+                622.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00014",
+          "rgb_xml": "dataset\\test\\testlabel\\00014.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00014.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                83.0,
+                532.0,
+                169.0,
+                565.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                79.0,
+                574.0,
+                173.0,
+                605.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                678.0,
+                548.0,
+                755.0,
+                583.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00018",
+          "rgb_xml": "dataset\\test\\testlabel\\00018.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00018.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                406.0,
+                479.0,
+                438.0,
+                553.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                483.0,
+                508.0,
+                555.0,
+                551.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                519.0,
+                482.0,
+                583.0,
+                514.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                516.0,
+                419.0,
+                587.0,
+                451.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                514.0,
+                359.0,
+                590.0,
+                397.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                517.0,
+                324.0,
+                586.0,
+                355.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                512.0,
+                271.0,
+                580.0,
+                303.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                521.0,
+                231.0,
+                584.0,
+                261.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                514.0,
+                117.0,
+                591.0,
+                150.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                331.0,
+                129.0,
+                402.0,
+                160.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00019",
+          "rgb_xml": "dataset\\test\\testlabel\\00019.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00019.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                327.0,
+                594.0,
+                397.0,
+                623.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                510.0,
+                532.0,
+                587.0,
+                568.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                515.0,
+                467.0,
+                582.0,
+                502.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                505.0,
+                419.0,
+                585.0,
+                453.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                503.0,
+                290.0,
+                585.0,
+                322.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                518.0,
+                232.0,
+                590.0,
+                261.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                512.0,
+                107.0,
+                587.0,
+                149.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                332.0,
+                107.0,
+                409.0,
+                146.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                333.0,
+                442.0,
+                404.0,
+                476.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                323.0,
+                543.0,
+                396.0,
+                575.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00020",
+          "rgb_xml": "dataset\\test\\testlabel\\00020.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00020.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                175.0,
+                281.0,
+                246.0,
+                310.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                518.0,
+                94.0,
+                585.0,
+                133.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                329.0,
+                367.0,
+                399.0,
+                399.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                327.0,
+                400.0,
+                406.0,
+                436.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                508.0,
+                404.0,
+                581.0,
+                436.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                516.0,
+                523.0,
+                589.0,
+                553.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                502.0,
+                584.0,
+                581.0,
+                614.0
+              ]
+            },
+            {
+              "class": "bus",
+              "bbox": [
+                633.0,
+                225.0,
+                763.0,
+                267.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00021",
+          "rgb_xml": "dataset\\test\\testlabel\\00021.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00021.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                548.0,
+                483.0,
+                628.0,
+                514.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                371.0,
+                369.0,
+                440.0,
+                401.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                559.0,
+                337.0,
+                629.0,
+                365.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                561.0,
+                292.0,
+                635.0,
+                321.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                564.0,
+                250.0,
+                639.0,
+                281.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                572.0,
+                200.0,
+                639.0,
+                235.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                554.0,
+                157.0,
+                631.0,
+                190.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                566.0,
+                111.0,
+                641.0,
+                142.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                378.0,
+                128.0,
+                458.0,
+                164.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                375.0,
+                263.0,
+                444.0,
+                295.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00023",
+          "rgb_xml": "dataset\\test\\testlabel\\00023.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00023.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                198.0,
+                538.0,
+                259.0,
+                567.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                192.0,
+                428.0,
+                256.0,
+                460.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                201.0,
+                387.0,
+                249.0,
+                415.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                187.0,
+                340.0,
+                252.0,
+                377.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                174.0,
+                307.0,
+                241.0,
+                333.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                166.0,
+                270.0,
+                236.0,
+                302.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                316.0,
+                352.0,
+                368.0,
+                377.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                439.0,
+                288.0,
+                497.0,
+                319.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                445.0,
+                359.0,
+                503.0,
+                388.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                445.0,
+                392.0,
+                505.0,
+                424.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00024",
+          "rgb_xml": "dataset\\test\\testlabel\\00024.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00024.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                88.0,
+                212.0,
+                154.0,
+                259.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                260.0,
+                190.0,
+                326.0,
+                241.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                251.0,
+                233.0,
+                315.0,
+                275.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                241.0,
+                275.0,
+                291.0,
+                313.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                212.0,
+                304.0,
+                272.0,
+                349.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                165.0,
+                399.0,
+                224.0,
+                450.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                142.0,
+                477.0,
+                206.0,
+                522.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                101.0,
+                558.0,
+                162.0,
+                601.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                356.0,
+                303.0,
+                412.0,
+                342.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                269.0,
+                157.0,
+                341.0,
+                205.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00025",
+          "rgb_xml": "dataset\\test\\testlabel\\00025.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00025.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                217.0,
+                281.0,
+                243.0,
+                339.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                260.0,
+                454.0,
+                285.0,
+                514.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                303.0,
+                440.0,
+                325.0,
+                496.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                431.0,
+                420.0,
+                495.0,
+                449.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                460.0,
+                148.0,
+                520.0,
+                179.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00026",
+          "rgb_xml": "dataset\\test\\testlabel\\00026.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00026.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                181.0,
+                220.0,
+                213.0,
+                285.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                172.0,
+                145.0,
+                199.0,
+                197.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                297.0,
+                131.0,
+                356.0,
+                162.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                417.0,
+                103.0,
+                469.0,
+                130.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                429.0,
+                152.0,
+                487.0,
+                176.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                423.0,
+                194.0,
+                488.0,
+                230.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                446.0,
+                248.0,
+                504.0,
+                285.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                373.0,
+                215.0,
+                396.0,
+                273.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                331.0,
+                303.0,
+                396.0,
+                329.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                317.0,
+                352.0,
+                350.0,
+                411.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00027",
+          "rgb_xml": "dataset\\test\\testlabel\\00027.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00027.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                148.0,
+                109.0,
+                224.0,
+                150.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                152.0,
+                110.0,
+                213.0,
+                135.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                105.0,
+                207.0,
+                165.0,
+                260.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                154.0,
+                284.0,
+                183.0,
+                342.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                153.0,
+                356.0,
+                185.0,
+                417.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                293.0,
+                589.0,
+                355.0,
+                619.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                413.0,
+                559.0,
+                463.0,
+                587.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                431.0,
+                517.0,
+                489.0,
+                544.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                419.0,
+                480.0,
+                472.0,
+                505.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                405.0,
+                441.0,
+                463.0,
+                468.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                388.0,
+                399.0,
+                450.0,
+                429.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00028",
+          "rgb_xml": "dataset\\test\\testlabel\\00028.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00028.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                367.0,
+                488.0,
+                419.0,
+                547.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                528.0,
+                240.0,
+                555.0,
+                301.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                304.0,
+                171.0,
+                369.0,
+                205.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                308.0,
+                145.0,
+                365.0,
+                170.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                306.0,
+                112.0,
+                363.0,
+                140.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                609.0,
+                92.0,
+                662.0,
+                122.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                626.0,
+                258.0,
+                678.0,
+                285.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                622.0,
+                294.0,
+                683.0,
+                320.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                622.0,
+                327.0,
+                680.0,
+                356.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                635.0,
+                363.0,
+                691.0,
+                388.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00029",
+          "rgb_xml": "dataset\\test\\testlabel\\00029.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00029.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                306.0,
+                465.0,
+                357.0,
+                492.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                305.0,
+                495.0,
+                360.0,
+                523.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                307.0,
+                528.0,
+                364.0,
+                556.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                305.0,
+                558.0,
+                364.0,
+                586.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                304.0,
+                597.0,
+                364.0,
+                625.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                611.0,
+                475.0,
+                663.0,
+                505.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                528.0,
+                436.0,
+                553.0,
+                491.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                591.0,
+                401.0,
+                620.0,
+                460.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                512.0,
+                294.0,
+                538.0,
+                349.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                573.0,
+                229.0,
+                603.0,
+                287.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00030",
+          "rgb_xml": "dataset\\test\\testlabel\\00030.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00030.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                440.0,
+                598.0,
+                503.0,
+                623.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                437.0,
+                557.0,
+                498.0,
+                584.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                436.0,
+                524.0,
+                491.0,
+                552.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                431.0,
+                490.0,
+                494.0,
+                517.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                429.0,
+                418.0,
+                485.0,
+                444.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                430.0,
+                375.0,
+                489.0,
+                402.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                424.0,
+                346.0,
+                480.0,
+                372.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                421.0,
+                310.0,
+                476.0,
+                338.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                473.0,
+                225.0,
+                499.0,
+                277.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                466.0,
+                113.0,
+                491.0,
+                172.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00031",
+          "rgb_xml": "dataset\\test\\testlabel\\00031.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00031.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                94.0,
+                436.0,
+                121.0,
+                495.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                93.0,
+                371.0,
+                113.0,
+                418.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                189.0,
+                367.0,
+                248.0,
+                396.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                268.0,
+                361.0,
+                325.0,
+                385.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                338.0,
+                358.0,
+                395.0,
+                384.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                411.0,
+                430.0,
+                468.0,
+                455.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                477.0,
+                450.0,
+                501.0,
+                508.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                474.0,
+                513.0,
+                502.0,
+                574.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                593.0,
+                585.0,
+                654.0,
+                613.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                593.0,
+                553.0,
+                652.0,
+                582.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00032",
+          "rgb_xml": "dataset\\test\\testlabel\\00032.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00032.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                386.0,
+                114.0,
+                433.0,
+                168.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                420.0,
+                174.0,
+                449.0,
+                233.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                427.0,
+                240.0,
+                453.0,
+                295.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                381.0,
+                453.0,
+                439.0,
+                480.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                384.0,
+                493.0,
+                440.0,
+                518.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                389.0,
+                531.0,
+                444.0,
+                558.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                391.0,
+                564.0,
+                450.0,
+                592.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                551.0,
+                577.0,
+                611.0,
+                605.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                558.0,
+                542.0,
+                617.0,
+                569.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                549.0,
+                508.0,
+                607.0,
+                537.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00033",
+          "rgb_xml": "dataset\\test\\testlabel\\00033.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00033.xml",
+          "rgb_only": [
+            {
+              "class": "car",
+              "bbox": [
+                682.0,
+                296.0,
+                739.0,
+                323.0
+              ]
+            }
+          ],
+          "ir_only": [
+            {
+              "class": "car",
+              "bbox": [
+                331.0,
+                374.0,
+                393.0,
+                409.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                394.0,
+                341.0,
+                420.0,
+                387.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                391.0,
+                290.0,
+                416.0,
+                338.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                411.0,
+                461.0,
+                458.0,
+                516.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                442.0,
+                523.0,
+                474.0,
+                586.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                549.0,
+                550.0,
+                579.0,
+                606.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                389.0,
+                231.0,
+                409.0,
+                274.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                378.0,
+                140.0,
+                405.0,
+                188.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                402.0,
+                89.0,
+                425.0,
+                139.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                468.0,
+                109.0,
+                515.0,
+                133.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "00034",
+          "rgb_xml": "dataset\\test\\testlabel\\00034.xml",
+          "ir_xml": "dataset\\test\\testlabelr\\00034.xml",
+          "rgb_only": [],
+          "ir_only": [
+            {
+              "class": "feright car",
+              "bbox": [
+                388.0,
+                572.0,
+                406.0,
+                626.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                470.0,
+                573.0,
+                524.0,
+                598.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                468.0,
+                542.0,
+                525.0,
+                565.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                376.0,
+                479.0,
+                405.0,
+                526.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                474.0,
+                509.0,
+                526.0,
+                534.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                460.0,
+                474.0,
+                520.0,
+                508.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                400.0,
+                419.0,
+                425.0,
+                477.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                467.0,
+                445.0,
+                513.0,
+                469.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                669.0,
+                413.0,
+                724.0,
+                436.0
+              ]
+            },
+            {
+              "class": "car",
+              "bbox": [
+                653.0,
+                355.0,
+                719.0,
+                386.0
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
