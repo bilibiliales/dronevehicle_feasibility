@@ -1,0 +1,233 @@
+{
+  "data_root": "dataset",
+  "mode": "visualize",
+  "iou_threshold": 0.5,
+  "polygon_iou_requested": false,
+  "splits": {
+    "train": {
+      "split": "train",
+      "matcher": {
+        "metric": "bbox",
+        "iou_threshold": 0.5
+      },
+      "focus_class": "car",
+      "figures_written": 8,
+      "manifest": [
+        {
+          "rank": 1,
+          "split": "train",
+          "key": "03019",
+          "ir_only_focus": 123,
+          "total_unmatched": 124,
+          "figure": "feasibility_report\\visual_audit\\visual\\train\\001_03019.png"
+        },
+        {
+          "rank": 2,
+          "split": "train",
+          "key": "03008",
+          "ir_only_focus": 119,
+          "total_unmatched": 120,
+          "figure": "feasibility_report\\visual_audit\\visual\\train\\002_03008.png"
+        },
+        {
+          "rank": 3,
+          "split": "train",
+          "key": "03040",
+          "ir_only_focus": 117,
+          "total_unmatched": 119,
+          "figure": "feasibility_report\\visual_audit\\visual\\train\\003_03040.png"
+        },
+        {
+          "rank": 4,
+          "split": "train",
+          "key": "03007",
+          "ir_only_focus": 116,
+          "total_unmatched": 117,
+          "figure": "feasibility_report\\visual_audit\\visual\\train\\004_03007.png"
+        },
+        {
+          "rank": 5,
+          "split": "train",
+          "key": "03009",
+          "ir_only_focus": 112,
+          "total_unmatched": 114,
+          "figure": "feasibility_report\\visual_audit\\visual\\train\\005_03009.png"
+        },
+        {
+          "rank": 6,
+          "split": "train",
+          "key": "03020",
+          "ir_only_focus": 107,
+          "total_unmatched": 108,
+          "figure": "feasibility_report\\visual_audit\\visual\\train\\006_03020.png"
+        },
+        {
+          "rank": 7,
+          "split": "train",
+          "key": "03018",
+          "ir_only_focus": 105,
+          "total_unmatched": 107,
+          "figure": "feasibility_report\\visual_audit\\visual\\train\\007_03018.png"
+        },
+        {
+          "rank": 8,
+          "split": "train",
+          "key": "03011",
+          "ir_only_focus": 102,
+          "total_unmatched": 103,
+          "figure": "feasibility_report\\visual_audit\\visual\\train\\008_03011.png"
+        }
+      ]
+    },
+    "val": {
+      "split": "val",
+      "matcher": {
+        "metric": "bbox",
+        "iou_threshold": 0.5
+      },
+      "focus_class": "car",
+      "figures_written": 8,
+      "manifest": [
+        {
+          "rank": 1,
+          "split": "val",
+          "key": "01049",
+          "ir_only_focus": 68,
+          "total_unmatched": 69,
+          "figure": "feasibility_report\\visual_audit\\visual\\val\\001_01049.png"
+        },
+        {
+          "rank": 2,
+          "split": "val",
+          "key": "01236",
+          "ir_only_focus": 41,
+          "total_unmatched": 90,
+          "figure": "feasibility_report\\visual_audit\\visual\\val\\002_01236.png"
+        },
+        {
+          "rank": 3,
+          "split": "val",
+          "key": "01031",
+          "ir_only_focus": 33,
+          "total_unmatched": 33,
+          "figure": "feasibility_report\\visual_audit\\visual\\val\\003_01031.png"
+        },
+        {
+          "rank": 4,
+          "split": "val",
+          "key": "01389",
+          "ir_only_focus": 27,
+          "total_unmatched": 27,
+          "figure": "feasibility_report\\visual_audit\\visual\\val\\004_01389.png"
+        },
+        {
+          "rank": 5,
+          "split": "val",
+          "key": "01218",
+          "ir_only_focus": 26,
+          "total_unmatched": 44,
+          "figure": "feasibility_report\\visual_audit\\visual\\val\\005_01218.png"
+        },
+        {
+          "rank": 6,
+          "split": "val",
+          "key": "00850",
+          "ir_only_focus": 25,
+          "total_unmatched": 26,
+          "figure": "feasibility_report\\visual_audit\\visual\\val\\006_00850.png"
+        },
+        {
+          "rank": 7,
+          "split": "val",
+          "key": "01424",
+          "ir_only_focus": 24,
+          "total_unmatched": 49,
+          "figure": "feasibility_report\\visual_audit\\visual\\val\\007_01424.png"
+        },
+        {
+          "rank": 8,
+          "split": "val",
+          "key": "01290",
+          "ir_only_focus": 24,
+          "total_unmatched": 32,
+          "figure": "feasibility_report\\visual_audit\\visual\\val\\008_01290.png"
+        }
+      ]
+    },
+    "test": {
+      "split": "test",
+      "matcher": {
+        "metric": "bbox",
+        "iou_threshold": 0.5
+      },
+      "focus_class": "car",
+      "figures_written": 8,
+      "manifest": [
+        {
+          "rank": 1,
+          "split": "test",
+          "key": "06335",
+          "ir_only_focus": 77,
+          "total_unmatched": 77,
+          "figure": "feasibility_report\\visual_audit\\visual\\test\\001_06335.png"
+        },
+        {
+          "rank": 2,
+          "split": "test",
+          "key": "08192",
+          "ir_only_focus": 74,
+          "total_unmatched": 79,
+          "figure": "feasibility_report\\visual_audit\\visual\\test\\002_08192.png"
+        },
+        {
+          "rank": 3,
+          "split": "test",
+          "key": "00077",
+          "ir_only_focus": 65,
+          "total_unmatched": 66,
+          "figure": "feasibility_report\\visual_audit\\visual\\test\\003_00077.png"
+        },
+        {
+          "rank": 4,
+          "split": "test",
+          "key": "00094",
+          "ir_only_focus": 61,
+          "total_unmatched": 63,
+          "figure": "feasibility_report\\visual_audit\\visual\\test\\004_00094.png"
+        },
+        {
+          "rank": 5,
+          "split": "test",
+          "key": "08405",
+          "ir_only_focus": 61,
+          "total_unmatched": 61,
+          "figure": "feasibility_report\\visual_audit\\visual\\test\\005_08405.png"
+        },
+        {
+          "rank": 6,
+          "split": "test",
+          "key": "00095",
+          "ir_only_focus": 59,
+          "total_unmatched": 60,
+          "figure": "feasibility_report\\visual_audit\\visual\\test\\006_00095.png"
+        },
+        {
+          "rank": 7,
+          "split": "test",
+          "key": "00102",
+          "ir_only_focus": 58,
+          "total_unmatched": 60,
+          "figure": "feasibility_report\\visual_audit\\visual\\test\\007_00102.png"
+        },
+        {
+          "rank": 8,
+          "split": "test",
+          "key": "08059",
+          "ir_only_focus": 58,
+          "total_unmatched": 58,
+          "figure": "feasibility_report\\visual_audit\\visual\\test\\008_08059.png"
+        }
+      ]
+    }
+  }
+}
