@@ -46,14 +46,25 @@ def index_files(folder: Path, suffixes):
 def parse_xml(xml_path: Path):
     root = ET.parse(xml_path).getroot()
     objects = []
+
+    name_normalize = {
+        "feright_car": "freight_car",
+        "feright car": "freight_car",
+        "feright": "freight_car",
+        "truvk": "truck",
+        "*": "freight_car",
+    }
+
     for i, obj in enumerate(root.findall("object")):
         name = (obj.findtext("name") or "").strip().lower()
-        if not name:
-            raise ValueError(f"{xml_path}: object[{i}] has no class name")
 
-        # 统一 DroneVehicle 常见拼写，避免 feright_car / freight_car 被当成两个类
-        if name == "feright_car":
-            name = "freight_car"
+        if not name:
+            raise ValueError(
+                f"{xml_path}: object[{i}] has no class name"
+            )
+
+        # 统一类别名称，确保 RGB、IR 和各数据集划分使用相同类别
+        name = name_normalize.get(name, name)
 
         difficult = int(float(obj.findtext("difficult", "0") or 0))
         pts = None
@@ -61,42 +72,70 @@ def parse_xml(xml_path: Path):
         poly = obj.find("polygon")
         if poly is not None:
             pts = []
+
             for j in range(1, 5):
                 x_elem = poly.find(f"x{j}")
                 y_elem = poly.find(f"y{j}")
+
                 if x_elem is None or y_elem is None:
-                    print(f"[WARN] {xml_path}: object[{i}] polygon missing x{j}/y{j}, fallback to bndbox")
+                    print(
+                        f"[WARN] {xml_path}: object[{i}] "
+                        f"polygon missing x{j}/y{j}, "
+                        "fallback to bndbox"
+                    )
                     pts = None
                     break
+
                 x_text = (x_elem.text or "").strip()
                 y_text = (y_elem.text or "").strip()
+
                 if not x_text or not y_text:
-                    print(f"[WARN] {xml_path}: object[{i}] polygon x{j}/y{j} empty, fallback to bndbox")
+                    print(
+                        f"[WARN] {xml_path}: object[{i}] "
+                        f"polygon x{j}/y{j} empty, "
+                        "fallback to bndbox"
+                    )
                     pts = None
                     break
+
                 pts.append((float(x_text), float(y_text)))
+
             if pts and len(set(pts)) < 3:
-                print(f"[WARN] {xml_path}: object[{i}] degenerate polygon, fallback to bndbox")
+                print(
+                    f"[WARN] {xml_path}: object[{i}] "
+                    "degenerate polygon, fallback to bndbox"
+                )
                 pts = None
 
         if pts is None and obj.find("bndbox") is not None:
             bnd = obj.find("bndbox")
+
             xmin = float(bnd.findtext("xmin", "0"))
             ymin = float(bnd.findtext("ymin", "0"))
             xmax = float(bnd.findtext("xmax", "0"))
             ymax = float(bnd.findtext("ymax", "0"))
-            pts = [(xmin, ymin), (xmax, ymin), (xmax, ymax), (xmin, ymax)]
+
+            pts = [
+                (xmin, ymin),
+                (xmax, ymin),
+                (xmax, ymax),
+                (xmin, ymax),
+            ]
 
         if pts is None:
-            # 变更 3：不再 print+continue，避免悄悄丢失目标。触发后先排除该成对样本再重跑。
             raise ValueError(
-                f"{xml_path}: object[{i}] has no usable polygon or bndbox. "
-                "Exclude this paired sample before dataset conversion."
+                f"{xml_path}: object[{i}] has no usable polygon "
+                "or bndbox. Exclude this paired sample "
+                "before dataset conversion."
             )
 
-        objects.append({"class": name, "points": pts, "difficult": difficult})
-    return objects
+        objects.append({
+            "class": name,
+            "points": pts,
+            "difficult": difficult,
+        })
 
+    return objects
 
 def _valid_polygon(poly: ET.Element | None) -> bool:
     """Return True only when polygon coordinates form a non-degenerate quadrilateral."""
@@ -263,7 +302,13 @@ def main():
         {line.strip() for line in Path(args.exclude_list).read_text(encoding="utf-8").splitlines() if line.strip()}
 
     indexes = {}
-    class_names = set()
+    class_names = {
+        "car",
+        "truck",
+        "bus",
+        "van",
+        "freight_car",
+    }
     audit = {"data_root": str(root), "output": str(out), "splits": {}, "warnings": [],
              "excluded_keys_count": len(exclude_keys)}
     audit["coordinate_repairs"] = []   # 变更 1：坐标修复记录
@@ -301,7 +346,11 @@ def main():
             for k in sorted(common):
                 objs = parse_xml(ix[lab_key][k])
                 parsed[(modality, k)] = objs
-                class_names.update(o["class"] for o in objs if args.include_difficult or not o["difficult"])
+                names = sorted(class_names)
+                if not names:
+                    raise RuntimeError("No usable classes found in XML annotations.")
+
+                class_to_id = {n: i for i, n in enumerate(names)}
         indexes[split] = (ix, sorted(common), parsed)
         audit["splits"][split] = {
             "counts": {k: len(v) for k, v in ix.items()},

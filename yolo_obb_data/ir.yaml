@@ -3,12 +3,8 @@ train: images/ir/train
 val: images/ir/val
 test: images/ir/test
 names:
-  0: '*'
-  1: bus
-  2: car
-  3: feright
-  4: feright car
-  5: freight_car
-  6: truck
-  7: truvk
-  8: van
+  0: bus
+  1: car
+  2: freight_car
+  3: truck
+  4: van

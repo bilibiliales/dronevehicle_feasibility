@@ -1,0 +1,214 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+(base) PS D:\dronevehicle_feasibility> python .\train_yolo_obb_baselines.py --modality rgb --smoke --device 0 --batch 2
+{
+  "started_at": "2026-10-25T15:51:40",
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch": "2.9.1+cu128",
+  "ultralytics": "8.4.188",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "args": {
+    "data_dir": "D:\\dronevehicle_feasibility\\yolo_obb_data",
+    "model": "yolo11n-obb.pt",
+    "modality": "rgb",
+    "epochs": 100,
+    "imgsz": 640,
+    "batch": 2,
+    "workers": 4,
+    "device": "0",
+    "seed": 20261025,
+    "project": "runs/dronevehicle_baselines",
+    "name": "baseline",
+    "patience": 20,
+    "smoke": true,
+    "resume": false
+  }
+}
+
+=== Training RGB baseline ===
+Ultralytics 8.4.188  Python-3.13.9 torch-2.9.1+cu128 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+engine\trainer: agnostic_nms=False, amp=True, angle=1.0, augment=False, auto_augment=randaugment, batch=2, bgr=0.0, box=7.5, cache=False, cfg=None, channels_last=None, classes=None, close_mosaic=10, cls=0.5, cls_pw=0.0, cls_remap=True, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=D:\dronevehicle_feasibility\yolo_obb_data\rgb.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dgrad=0.5, dis=6.0, distill_model=None, dlam=1.0, dlog=1.0, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=1, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=0.01, freeze=None, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=640, iou=0.7, kobj=1.0, line_width=None, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=yolo11n-obb.pt, momentum=0.937, mosaic=1.0, multi_scale=0.0, name=baseline_rgb_smoke-3, nbs=64, nms=None, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=0, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=runs\dronevehicle_baselines, quantize=None, rect=False, resume=False, retina_masks=False, rle=1.0, save=True, save_conf=False, save_crop=False, save_dir=C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb_smoke-3, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=20261025, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=obb, time=None, tracker=tracktrack.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=0, workspace=None
+Overriding model.yaml nc=80 with nc=5
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]                 
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]                
+  2                  -1  1      6640  ultralytics.nn.modules.block.C3k2            [32, 64, 1, False, 0.25]      
+  3                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+  4                  -1  1     26080  ultralytics.nn.modules.block.C3k2            [64, 128, 1, False, 0.25]     
+  5                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+  6                  -1  1     87040  ultralytics.nn.modules.block.C3k2            [128, 128, 1, True]           
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+  8                  -1  1    346112  ultralytics.nn.modules.block.C3k2            [256, 256, 1, True]           
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]                 
+ 10                  -1  1    249728  ultralytics.nn.modules.block.C2PSA           [256, 256, 1]                 
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 13                  -1  1    111296  ultralytics.nn.modules.block.C3k2            [384, 128, 1, False]          
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 16                  -1  1     32096  ultralytics.nn.modules.block.C3k2            [256, 64, 1, False]           
+ 17                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 19                  -1  1     86720  ultralytics.nn.modules.block.C3k2            [192, 128, 1, False]          
+ 20                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 22                  -1  1    378880  ultralytics.nn.modules.block.C3k2            [384, 256, 1, True]           
+ 23        [16, 19, 22]  1    503314  ultralytics.nn.modules.head.OBB              [5, 1, 16, None, [64, 128, 256]]
+YOLO11n-obb summary: 196 layers, 2,662,482 parameters, 2,662,466 gradients, 6.8 GFLOPs
+
+Transferred 535/541 items from pretrained weights
+Freezing layer 'model.23.dfl.conv.weight'
+AMP: running Automatic Mixed Precision (AMP) checks...
+AMP: checks passed 
+train: Fast image access  (ping: 0.3±0.1 ms, read: 302.4±70.1 MB/s, size: 218.2 KB)
+train: Scanning D:\dronevehicle_feasibility\yolo_obb_data\labels\rgb\train... 180 images, 21 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 180/180 1.4Kit/s 0.1s
+train: New cache created: D:\dronevehicle_feasibility\yolo_obb_data\labels\rgb\train.cache
+albumentations: Blur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+val: Fast image access  (ping: 0.2±0.0 ms, read: 304.1±73.1 MB/s, size: 259.6 KB)
+val: Scanning D:\dronevehicle_feasibility\yolo_obb_data\labels\rgb\val... 1468 images, 27 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1468/1468 1.3Kit/s 1.2s
+val: New cache created: D:\dronevehicle_feasibility\yolo_obb_data\labels\rgb\val.cache
+optimizer: 'optimizer=auto' found, ignoring 'lr0=0.01' and determining best 'optimizer' and 'lr0' automatically... 
+optimizer: AdamW(lr=0.001111, momentum=0.9) with parameter groups 87 weight(decay=0.0), 97 weight(decay=0.0005), 96 bias(decay=0.0)
+Plotting labels to C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb_smoke-3\labels.jpg... 
+Using 180 train, 1468 val images for fraction=0.01 at imgsz=640
+Using 0 dataloader workers
+Logging results to C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb_smoke-3
+Starting training for 1 epochs...
+Closing dataloader mosaic
+albumentations: Blur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+        1/1     0.377G      2.173      5.013      2.662     0.2493          1        640: 100% ━━━━━━━━━━━━ 90/90 3.3it/s 27.6s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 734/734 3.7it/s 3:18
+                   all       1468      22418     0.0166     0.0522    0.00492    0.00255
+
+1 epochs completed in 0.065 hours.
+Optimizer stripped from C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb_smoke-3\weights\last.pt, 5.6MB
+Optimizer stripped from C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb_smoke-3\weights\best.pt, 5.6MB
+
+Validating C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb_smoke-3\weights\best.pt...
+Ultralytics 8.4.188  Python-3.13.9 torch-2.9.1+cu128 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+YOLO11n-obb summary (fused): 109 layers, 2,654,698 parameters, 0 gradients, 6.6 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 734/734 5.6it/s 2:10
+                   all       1468      22418     0.0169     0.0522    0.00498    0.00257
+                   bus        285        751     0.0123     0.0146   0.000566   0.000445
+                   car       1360      18925     0.0511      0.171     0.0185    0.00871
+           freight_car        273        710   0.000582    0.00141   4.64e-06   4.64e-07
+                 truck        405       1336     0.0204     0.0741    0.00579    0.00372
+                   van        286        696          0          0          0          0
+Speed: 1.6ms preprocess, 23.8ms inference, 0.0ms loss, 12.5ms postprocess per image
+Results saved to C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb_smoke-3
+Finished rgb. Run artifacts: C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb_smoke-3
+Best checkpoint: C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb_smoke-3\weights\best.pt
+Metrics/logs are in the run directory (results.csv, results.png, args.yaml).
+(base) PS D:\dronevehicle_feasibility> python .\train_yolo_obb_baselines.py --modality ir --smoke --device 0 --batch 2
+{
+  "started_at": "2026-10-25T15:58:52",
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch": "2.9.1+cu128",
+  "ultralytics": "8.4.188",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "args": {
+    "data_dir": "D:\\dronevehicle_feasibility\\yolo_obb_data",
+    "model": "yolo11n-obb.pt",
+    "modality": "ir",
+    "epochs": 100,
+    "imgsz": 640,
+    "batch": 2,
+    "workers": 4,
+    "device": "0",
+    "seed": 20261025,
+    "project": "runs/dronevehicle_baselines",
+    "name": "baseline",
+    "patience": 20,
+    "smoke": true,
+    "resume": false
+  }
+}
+
+=== Training IR baseline ===
+Ultralytics 8.4.188  Python-3.13.9 torch-2.9.1+cu128 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+engine\trainer: agnostic_nms=False, amp=True, angle=1.0, augment=False, auto_augment=randaugment, batch=2, bgr=0.0, box=7.5, cache=False, cfg=None, channels_last=None, classes=None, close_mosaic=10, cls=0.5, cls_pw=0.0, cls_remap=True, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=D:\dronevehicle_feasibility\yolo_obb_data\ir.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dgrad=0.5, dis=6.0, distill_model=None, dlam=1.0, dlog=1.0, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=1, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=0.01, freeze=None, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=640, iou=0.7, kobj=1.0, line_width=None, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=yolo11n-obb.pt, momentum=0.937, mosaic=1.0, multi_scale=0.0, name=baseline_ir_smoke-2, nbs=64, nms=None, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=0, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=runs\dronevehicle_baselines, quantize=None, rect=False, resume=False, retina_masks=False, rle=1.0, save=True, save_conf=False, save_crop=False, save_dir=C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_ir_smoke-2, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=20261025, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=obb, time=None, tracker=tracktrack.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=0, workspace=None
+Overriding model.yaml nc=80 with nc=5
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]                 
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]                
+  2                  -1  1      6640  ultralytics.nn.modules.block.C3k2            [32, 64, 1, False, 0.25]      
+  3                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+  4                  -1  1     26080  ultralytics.nn.modules.block.C3k2            [64, 128, 1, False, 0.25]     
+  5                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+  6                  -1  1     87040  ultralytics.nn.modules.block.C3k2            [128, 128, 1, True]           
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+  8                  -1  1    346112  ultralytics.nn.modules.block.C3k2            [256, 256, 1, True]           
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]                 
+ 10                  -1  1    249728  ultralytics.nn.modules.block.C2PSA           [256, 256, 1]                 
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 13                  -1  1    111296  ultralytics.nn.modules.block.C3k2            [384, 128, 1, False]          
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 16                  -1  1     32096  ultralytics.nn.modules.block.C3k2            [256, 64, 1, False]           
+ 17                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 19                  -1  1     86720  ultralytics.nn.modules.block.C3k2            [192, 128, 1, False]          
+ 20                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 22                  -1  1    378880  ultralytics.nn.modules.block.C3k2            [384, 256, 1, True]           
+ 23        [16, 19, 22]  1    503314  ultralytics.nn.modules.head.OBB              [5, 1, 16, None, [64, 128, 256]]
+YOLO11n-obb summary: 196 layers, 2,662,482 parameters, 2,662,466 gradients, 6.8 GFLOPs
+
+Transferred 535/541 items from pretrained weights
+Freezing layer 'model.23.dfl.conv.weight'
+AMP: running Automatic Mixed Precision (AMP) checks...
+AMP: checks passed 
+train: Fast image access  (ping: 0.4±0.0 ms, read: 250.7±62.7 MB/s, size: 203.1 KB)
+train: Scanning D:\dronevehicle_feasibility\yolo_obb_data\labels\ir\train... 180 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 180/180 1.2Kit/s 0.2s
+train: New cache created: D:\dronevehicle_feasibility\yolo_obb_data\labels\ir\train.cache
+albumentations: Blur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+val: Fast image access  (ping: 0.3±0.0 ms, read: 306.4±57.7 MB/s, size: 213.5 KB)
+val: Scanning D:\dronevehicle_feasibility\yolo_obb_data\labels\ir\val... 1468 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1468/1468 1.2Kit/s 1.2s
+val: New cache created: D:\dronevehicle_feasibility\yolo_obb_data\labels\ir\val.cache
+optimizer: 'optimizer=auto' found, ignoring 'lr0=0.01' and determining best 'optimizer' and 'lr0' automatically... 
+optimizer: AdamW(lr=0.001111, momentum=0.9) with parameter groups 87 weight(decay=0.0), 97 weight(decay=0.0005), 96 bias(decay=0.0)
+Plotting labels to C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_ir_smoke-2\labels.jpg... 
+Using 180 train, 1468 val images for fraction=0.01 at imgsz=640
+Using 0 dataloader workers
+Logging results to C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_ir_smoke-2
+Starting training for 1 epochs...
+Closing dataloader mosaic
+albumentations: Blur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+        1/1     0.396G      1.496       3.85      2.915    0.07149         22        640: 100% ━━━━━━━━━━━━ 90/90 2.9it/s 31.2s
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 734/734 3.1it/s 4:00
+                   all       1468      24447     0.0168     0.0305    0.00347    0.00182
+
+1 epochs completed in 0.078 hours.
+Optimizer stripped from C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_ir_smoke-2\weights\last.pt, 5.6MB
+Optimizer stripped from C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_ir_smoke-2\weights\best.pt, 5.6MB
+
+Validating C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_ir_smoke-2\weights\best.pt...
+Ultralytics 8.4.188  Python-3.13.9 torch-2.9.1+cu128 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+YOLO11n-obb summary (fused): 109 layers, 2,654,698 parameters, 0 gradients, 6.6 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 734/734 7.9it/s 1:33
+                   all       1468      24447     0.0167     0.0305    0.00346    0.00182
+                   bus        291        789    0.00649     0.0114   0.000124   5.43e-05
+                   car       1387      20549     0.0613      0.107      0.015    0.00777
+           freight_car        289        918          0          0          0          0
+                 truck        428       1470     0.0156     0.0327    0.00218    0.00129
+                   van        291        721   0.000321    0.00139   1.68e-06   1.68e-07
+Speed: 1.4ms preprocess, 17.6ms inference, 0.0ms loss, 9.0ms postprocess per image
+Results saved to C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_ir_smoke-2
+Finished ir. Run artifacts: C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_ir_smoke-2
+Best checkpoint: C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_ir_smoke-2\weights\best.pt
+Metrics/logs are in the run directory (results.csv, results.png, args.yaml).
+(base) PS D:\dronevehicle_feasibility> 

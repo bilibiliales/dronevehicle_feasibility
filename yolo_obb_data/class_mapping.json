@@ -1,11 +1,7 @@
 {
-  "*": 0,
-  "bus": 1,
-  "car": 2,
-  "feright": 3,
-  "feright car": 4,
-  "freight_car": 5,
-  "truck": 6,
-  "truvk": 7,
-  "van": 8
+  "bus": 0,
+  "car": 1,
+  "freight_car": 2,
+  "truck": 3,
+  "van": 4
 }

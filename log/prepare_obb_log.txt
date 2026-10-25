@@ -1,4 +1,5 @@
 C:\Users\User\miniconda3\python.exe D:\dronevehicle_feasibility\prepare_dronevehicle_obb.py
+[INFO] Loaded 47 existing exclusion keys
 [WARN] Excluding paired sample train:00106: 00106.xml object[1] has no usable polygon or bndbox
 [WARN] Excluding paired sample train:00360: 00360.xml object[10] has no usable polygon or bndbox
 [WARN] Excluding paired sample train:00441: 00441.xml object[11] has no usable polygon or bndbox
@@ -71,7 +72,7 @@ C:\Users\User\miniconda3\python.exe D:\dronevehicle_feasibility\prepare_droneveh
 [WARN] Excluding paired sample test:02602: 02602.xml object[2] has no usable polygon or bndbox
 [WARN] Excluding paired sample test:04839: 04839.xml object[0] has no usable polygon or bndbox
 [WARN] Excluding paired sample test:04898: 04898.xml object[12] has no usable polygon or bndbox
-[INFO] Exclusion list: 47 total keys, 47 newly discovered: D:\dronevehicle_feasibility\dataset\exclude_keys.txt
+[INFO] Exclusion list: 47 total keys, 0 newly discovered: D:\dronevehicle_feasibility\dataset\exclude_keys.txt
 [INFO] train: excluded 29 paired samples (RGB+IR)
 [INFO] val: excluded 1 paired samples (RGB+IR)
 [INFO] test: excluded 17 paired samples (RGB+IR)
@@ -235,15 +236,11 @@ C:\Users\User\miniconda3\python.exe D:\dronevehicle_feasibility\prepare_droneveh
     }
   ],
   "classes": {
-    "*": 0,
-    "bus": 1,
-    "car": 2,
-    "feright": 3,
-    "feright car": 4,
-    "freight_car": 5,
-    "truck": 6,
-    "truvk": 7,
-    "van": 8
+    "bus": 0,
+    "car": 1,
+    "freight_car": 2,
+    "truck": 3,
+    "van": 4
   },
   "label_format": "Ultralytics OBB: class x1 y1 x2 y2 x3 y3 x4 y4 (normalized)"
 }
