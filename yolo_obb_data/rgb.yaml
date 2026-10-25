@@ -1,0 +1,14 @@
+path: D:/dronevehicle_feasibility/yolo_obb_data
+train: images/rgb/train
+val: images/rgb/val
+test: images/rgb/test
+names:
+  0: '*'
+  1: bus
+  2: car
+  3: feright
+  4: feright car
+  5: freight_car
+  6: truck
+  7: truvk
+  8: van

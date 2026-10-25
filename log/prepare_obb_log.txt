@@ -1,0 +1,257 @@
+C:\Users\User\miniconda3\python.exe D:\dronevehicle_feasibility\prepare_dronevehicle_obb.py
+[WARN] Excluding paired sample train:00106: 00106.xml object[1] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00360: 00360.xml object[10] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00441: 00441.xml object[11] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00443: 00443.xml object[40] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00447: 00447.xml object[38] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00507: 00507.xml object[15] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00982: 00982.xml object[5] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:01557: 01557.xml object[2] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:02293: 02293.xml object[16] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:02313: 02313.xml object[15] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:03391: 03391.xml object[5] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:03410: 03410.xml object[4] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:03411: 03411.xml object[5] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:03459: 03459.xml object[25] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:03460: 03460.xml object[51] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:03461: 03461.xml object[55] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:05275: 05275.xml object[23] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:05360: 05360.xml object[4] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:05364: 05364.xml object[28] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:05923: 05923.xml object[17] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:16481: 16481.xml object[11] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00106: 00106.xml object[1] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00360: 00360.xml object[9] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00441: 00441.xml object[11] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00443: 00443.xml object[40] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00447: 00447.xml object[38] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00507: 00507.xml object[15] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00966: 00966.xml object[27] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:00982: 00982.xml object[5] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:01561: 01561.xml object[5] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:02293: 02293.xml object[18] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:02299: 02299.xml object[18] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:02313: 02313.xml object[18] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:03181: 03181.xml object[36] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:03391: 03391.xml object[5] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:03460: 03460.xml object[51] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:03461: 03461.xml object[54] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:04131: 04131.xml object[55] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:05257: 05257.xml object[20] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:05275: 05275.xml object[22] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:05360: 05360.xml object[4] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:05838: 05838.xml object[11] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:05923: 05923.xml object[17] has no usable polygon or bndbox
+[WARN] Excluding paired sample train:07595: 07595.xml object[4] has no usable polygon or bndbox
+[WARN] Excluding paired sample val:01247: 01247.xml object[43] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01180: 01180.xml object[4] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01702: 01702.xml object[15] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01708: 01708.xml object[3] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01733: 01733.xml object[96] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01734: 01734.xml object[134] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01735: 01735.xml object[13] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01736: 01736.xml object[53] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01737: 01737.xml object[78] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01738: 01738.xml object[122] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01830: 01830.xml object[4] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:02750: 02750.xml object[20] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:04839: 04839.xml object[3] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:00093: 00093.xml object[28] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01143: 01143.xml object[14] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01180: 01180.xml object[4] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01702: 01702.xml object[15] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01708: 01708.xml object[3] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01733: 01733.xml object[96] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01734: 01734.xml object[134] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01735: 01735.xml object[13] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01736: 01736.xml object[53] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01737: 01737.xml object[78] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:01738: 01738.xml object[122] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:02597: 02597.xml object[1] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:02602: 02602.xml object[2] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:04839: 04839.xml object[0] has no usable polygon or bndbox
+[WARN] Excluding paired sample test:04898: 04898.xml object[12] has no usable polygon or bndbox
+[INFO] Exclusion list: 47 total keys, 47 newly discovered: D:\dronevehicle_feasibility\dataset\exclude_keys.txt
+[INFO] train: excluded 29 paired samples (RGB+IR)
+[INFO] val: excluded 1 paired samples (RGB+IR)
+[INFO] test: excluded 17 paired samples (RGB+IR)
+{
+  "data_root": "D:\\dronevehicle_feasibility\\dataset",
+  "output": "D:\\dronevehicle_feasibility\\yolo_obb_data",
+  "splits": {
+    "train": {
+      "counts": {
+        "rgb": 17990,
+        "ir": 17990,
+        "rgb_xml": 17990,
+        "ir_xml": 17990
+      },
+      "common_keys": 17961,
+      "union_keys": 17990,
+      "excluded": 29,
+      "missing_key_examples": {},
+      "objects": {
+        "rgb": 285868,
+        "ir": 315439
+      }
+    },
+    "val": {
+      "counts": {
+        "rgb": 1469,
+        "ir": 1469,
+        "rgb_xml": 1469,
+        "ir_xml": 1469
+      },
+      "common_keys": 1468,
+      "union_keys": 1469,
+      "excluded": 1,
+      "missing_key_examples": {},
+      "objects": {
+        "rgb": 22418,
+        "ir": 24447
+      }
+    },
+    "test": {
+      "counts": {
+        "rgb": 8980,
+        "ir": 8980,
+        "rgb_xml": 8980,
+        "ir_xml": 8980
+      },
+      "common_keys": 8963,
+      "union_keys": 8980,
+      "excluded": 17,
+      "missing_key_examples": {},
+      "objects": {
+        "rgb": 142113,
+        "ir": 158348
+      }
+    }
+  },
+  "warnings": [
+    "train: 29 samples excluded",
+    "val: 1 samples excluded",
+    "test: 17 samples excluded"
+  ],
+  "excluded_keys_count": 47,
+  "coordinate_repairs": [
+    {
+      "split": "val",
+      "modality": "rgb",
+      "key": "01291",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\val\\vallabel\\01291.xml",
+      "original": [
+        845.0,
+        386.0
+      ],
+      "clipped": [
+        840.0,
+        386.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "rgb",
+      "key": "02313",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabel\\02313.xml",
+      "original": [
+        -1.0,
+        51.0
+      ],
+      "clipped": [
+        0.0,
+        51.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "rgb",
+      "key": "02320",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabel\\02320.xml",
+      "original": [
+        843.0,
+        637.0
+      ],
+      "clipped": [
+        840.0,
+        637.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "rgb",
+      "key": "07939",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabel\\07939.xml",
+      "original": [
+        -3.0,
+        161.0
+      ],
+      "clipped": [
+        0.0,
+        161.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "ir",
+      "key": "01691",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabelr\\01691.xml",
+      "original": [
+        -3.0,
+        174.0
+      ],
+      "clipped": [
+        0.0,
+        174.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "ir",
+      "key": "02320",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabelr\\02320.xml",
+      "original": [
+        843.0,
+        637.0
+      ],
+      "clipped": [
+        840.0,
+        637.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "ir",
+      "key": "07939",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabelr\\07939.xml",
+      "original": [
+        -3.0,
+        161.0
+      ],
+      "clipped": [
+        0.0,
+        161.0
+      ]
+    }
+  ],
+  "classes": {
+    "*": 0,
+    "bus": 1,
+    "car": 2,
+    "feright": 3,
+    "feright car": 4,
+    "freight_car": 5,
+    "truck": 6,
+    "truvk": 7,
+    "van": 8
+  },
+  "label_format": "Ultralytics OBB: class x1 y1 x2 y2 x3 y3 x4 y4 (normalized)"
+}
+
+Prepared data at: D:\dronevehicle_feasibility\yolo_obb_data
+RGB YAML: D:\dronevehicle_feasibility\yolo_obb_data\rgb.yaml
+IR YAML:  D:\dronevehicle_feasibility\yolo_obb_data\ir.yaml
+Coordinate repairs recorded: 7
+Next: run the smoke test before full training.
+
+进程已结束，退出代码为 0

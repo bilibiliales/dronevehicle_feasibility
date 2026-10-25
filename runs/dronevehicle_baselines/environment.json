@@ -1,0 +1,26 @@
+{
+  "started_at": "2026-10-25T12:58:09",
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch": "2.9.1+cu128",
+  "ultralytics": "8.4.188",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "args": {
+    "data_dir": "D:\\dronevehicle_feasibility\\yolo_obb_data",
+    "model": "yolo11n-obb.pt",
+    "modality": "rgb",
+    "epochs": 100,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 4,
+    "device": "0",
+    "seed": 20261025,
+    "project": "runs/dronevehicle_baselines",
+    "name": "baseline",
+    "patience": 20,
+    "smoke": false,
+    "resume": false
+  }
+}

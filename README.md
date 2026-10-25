@@ -1,67 +1,49 @@
-# dronevehicle_feasibility
+# DroneVehicle 标准 YOLO-OBB 基线代码
 
-This is a first-pass **data and research-feasibility audit**, not a detector and not a training implementation.
+## 适用范围
+只做 RGB-only 与 IR-only 的标准 Ultralytics OBB 基线；不含任何创新门控/融合模块。
+默认数据路径为 `D:\dronevehicle_feasibility\dataset`。
 
-## What it checks
-- train/val/test split folder discovery, or explicit folder overrides
-- RGB/IR image pairing (normalizes common suffixes such as `_R`, `_IR`, `_I`)
-- matching XML files
-- XML parse validity and 4-point polygon annotations (`x1/y1 ... x4/y4`)
-- per-image object counts, same-class polygon/bbox matches, unmatched RGB/IR annotations
-- CSV + JSON reports for choosing the next research step
+## 1. 安装
+在 `D:\dronevehicle_feasibility` 的虚拟环境中执行：
+```powershell
+python -m pip install -U ultralytics pillow
+python -c "import torch,ultralytics; print('torch',torch.__version__,'cuda',torch.cuda.is_available(),'ultralytics',ultralytics.__version__); print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'NO CUDA')"
+```
+如果 CUDA 显示 False，先修复 PyTorch/CUDA 环境，不要直接开始正式训练。
 
-## Dataset layout
+## 2. 转换与审计
+把两个 `.py` 文件放到 `D:\dronevehicle_feasibility` 后：
+```powershell
+Set-Location D:\dronevehicle_feasibility
+python .\prepare_dronevehicle_obb.py
+```
+转换默认 fail-fast。若 XML/文件配对有任何缺失，会停止并报告，不会静默丢弃。
+输出在 `D:\dronevehicle_feasibility\yolo_obb_data`。图像优先硬链接，不额外复制；硬链接失败才复制。
+检查 `data_audit.json`、`class_mapping.json` 以及 `rgb.yaml` / `ir.yaml`。
+如果报告大量 missing key，先排查，不要立即加 `--allow-missing-modality`。
 
-```text
-dataset/
-  train/
-    trainimg/       # RGB images
-    trainimgr/      # IR images
-    trainlabel/     # RGB XML annotations
-    trainlabelr/    # IR XML annotations
-  val/
-    valimg/
-    valimgr/
-    vallabel/
-    vallabelr/
-  test/
-    testimg/
-    testimgr/
-    testlabel/
-    testlabelr/
+## 3. Smoke test（先跑这个）
+```powershell
+python .\train_yolo_obb_baselines.py --modality rgb --smoke --device 0 --batch 2
+```
+Smoke test 只用于确认数据管线能训练，不可把指标当正式结果。检查没有 label format / CUDA / OOM 错误后，再试 IR：
+```powershell
+python .\train_yolo_obb_baselines.py --modality ir --smoke --device 0 --batch 2
 ```
 
-Each split contains paired `.jpg` images and `.xml` annotations. The image and
-annotation files use matching numeric basenames (for example, `00001.jpg` and
-`00001.xml`). In each split, the non-`r` image/label folders contain RGB data;
-the folders ending in `r` contain IR data.
-
-| Split | RGB images and labels | IR images and labels |
-|---|---:|---:|
-| `train` | 17,990 each | 17,990 each |
-| `val` | 1,469 each | 1,469 each |
-| `test` | 8,980 each | 8,980 each |
-
-## Run the audit
-
-The current folder names are not recognized by automatic RGB/IR folder
-discovery, so pass the data directories explicitly:
-
-```bash
-python audit_dronevehicle.py --data-root dataset \
-  --train-rgb-dir dataset/train/trainimg \
-  --train-ir-dir dataset/train/trainimgr \
-  --train-rgb-label-dir dataset/train/trainlabel \
-  --train-ir-label-dir dataset/train/trainlabelr \
-  --val-rgb-dir dataset/val/valimg \
-  --val-ir-dir dataset/val/valimgr \
-  --val-rgb-label-dir dataset/val/vallabel \
-  --val-ir-label-dir dataset/val/vallabelr \
-  --test-rgb-dir dataset/test/testimg \
-  --test-ir-dir dataset/test/testimgr \
-  --test-rgb-label-dir dataset/test/testlabel \
-  --test-ir-label-dir dataset/test/testlabelr
+## 4. 正式训练
+先单独运行，避免同时争用 16GB 显存：
+```powershell
+python .\train_yolo_obb_baselines.py --modality rgb --epochs 100 --imgsz 640 --batch 4 --workers 4 --device 0
+python .\train_yolo_obb_baselines.py --modality ir  --epochs 100 --imgsz 640 --batch 4 --workers 4 --device 0
 ```
+Windows 下脚本会把 dataloader workers 设为 0（更稳但可能较慢）；如要调整可修改脚本。若 OOM，把 batch 改为 2；不要同时训练两个模型。
 
-Reports are written to `feasibility_report/pair_annotation_audit.csv` and
-`feasibility_report/pair_annotation_audit.json` by default.
+## 5. 重要说明
+- 使用 OBB 标签：每个目标输出 `class x1 y1 x2 y2 x3 y3 x4 y4`，坐标按原图宽高归一化。
+- 类别编号按所有 train/val/test、RGB/IR XML 中出现的类别名统一排序，写入 `class_mapping.json`。
+- 测试集仅用于最终评估；本脚本训练过程只使用 train 与 val。不要依据 test 指标调参。
+- 转换程序要求四点多边形 `x1/y1 ... x4/y4`。若 XML 不是这个结构，会报错；不要改成水平框来绕过。
+- `--force` 会删除整个输出目录，请确认输出目录没有需要保留的内容。
+- YOLO-OBB 的标签格式和模型名称应在实际安装的 Ultralytics 版本中再核对；记录 `ultralytics` 版本和环境 JSON。

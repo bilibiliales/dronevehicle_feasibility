@@ -1,2 +1,4 @@
 dataset
 .idea
+yolo_obb_data/images
+yolo_obb_data/labels

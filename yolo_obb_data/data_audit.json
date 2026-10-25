@@ -1,0 +1,172 @@
+{
+  "data_root": "D:\\dronevehicle_feasibility\\dataset",
+  "output": "D:\\dronevehicle_feasibility\\yolo_obb_data",
+  "splits": {
+    "train": {
+      "counts": {
+        "rgb": 17990,
+        "ir": 17990,
+        "rgb_xml": 17990,
+        "ir_xml": 17990
+      },
+      "common_keys": 17961,
+      "union_keys": 17990,
+      "excluded": 29,
+      "missing_key_examples": {},
+      "objects": {
+        "rgb": 285868,
+        "ir": 315439
+      }
+    },
+    "val": {
+      "counts": {
+        "rgb": 1469,
+        "ir": 1469,
+        "rgb_xml": 1469,
+        "ir_xml": 1469
+      },
+      "common_keys": 1468,
+      "union_keys": 1469,
+      "excluded": 1,
+      "missing_key_examples": {},
+      "objects": {
+        "rgb": 22418,
+        "ir": 24447
+      }
+    },
+    "test": {
+      "counts": {
+        "rgb": 8980,
+        "ir": 8980,
+        "rgb_xml": 8980,
+        "ir_xml": 8980
+      },
+      "common_keys": 8963,
+      "union_keys": 8980,
+      "excluded": 17,
+      "missing_key_examples": {},
+      "objects": {
+        "rgb": 142113,
+        "ir": 158348
+      }
+    }
+  },
+  "warnings": [
+    "train: 29 samples excluded",
+    "val: 1 samples excluded",
+    "test: 17 samples excluded"
+  ],
+  "excluded_keys_count": 47,
+  "coordinate_repairs": [
+    {
+      "split": "val",
+      "modality": "rgb",
+      "key": "01291",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\val\\vallabel\\01291.xml",
+      "original": [
+        845.0,
+        386.0
+      ],
+      "clipped": [
+        840.0,
+        386.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "rgb",
+      "key": "02313",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabel\\02313.xml",
+      "original": [
+        -1.0,
+        51.0
+      ],
+      "clipped": [
+        0.0,
+        51.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "rgb",
+      "key": "02320",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabel\\02320.xml",
+      "original": [
+        843.0,
+        637.0
+      ],
+      "clipped": [
+        840.0,
+        637.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "rgb",
+      "key": "07939",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabel\\07939.xml",
+      "original": [
+        -3.0,
+        161.0
+      ],
+      "clipped": [
+        0.0,
+        161.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "ir",
+      "key": "01691",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabelr\\01691.xml",
+      "original": [
+        -3.0,
+        174.0
+      ],
+      "clipped": [
+        0.0,
+        174.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "ir",
+      "key": "02320",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabelr\\02320.xml",
+      "original": [
+        843.0,
+        637.0
+      ],
+      "clipped": [
+        840.0,
+        637.0
+      ]
+    },
+    {
+      "split": "test",
+      "modality": "ir",
+      "key": "07939",
+      "xml": "D:\\dronevehicle_feasibility\\dataset\\test\\testlabelr\\07939.xml",
+      "original": [
+        -3.0,
+        161.0
+      ],
+      "clipped": [
+        0.0,
+        161.0
+      ]
+    }
+  ],
+  "classes": {
+    "*": 0,
+    "bus": 1,
+    "car": 2,
+    "feright": 3,
+    "feright car": 4,
+    "freight_car": 5,
+    "truck": 6,
+    "truvk": 7,
+    "van": 8
+  },
+  "label_format": "Ultralytics OBB: class x1 y1 x2 y2 x3 y3 x4 y4 (normalized)"
+}
