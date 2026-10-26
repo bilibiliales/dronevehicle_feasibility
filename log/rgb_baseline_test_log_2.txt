@@ -1,0 +1,184 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+(base) PS D:\dronevehicle_feasibility> Set-Location D:\dronevehicle_feasibility
+(base) PS D:\dronevehicle_feasibility>
+(base) PS D:\dronevehicle_feasibility> python .\train_yolo_obb_baselines.py `
+>>   --model "C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2\weights\last.pt" `
+>>   --modality rgb `
+>>   --epochs 60 `
+>>   --imgsz 640 `
+>>   --batch 4 `
+>>   --device 0 `
+>>   --patience 15 `
+>>   --resume
+{
+  "started_at": "2026-10-26T11:44:40",
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch": "2.9.1+cu128",
+  "ultralytics": "8.4.188",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "args": {
+    "data_dir": "D:\\dronevehicle_feasibility\\yolo_obb_data",
+    "model": "C:\\Users\\User\\runs\\obb\\runs\\dronevehicle_baselines\\baseline_rgb-2\\weights\\last.pt",
+    "modality": "rgb",
+    "epochs": 60,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 4,
+    "device": "0",
+    "seed": 20261025,
+    "project": "runs/dronevehicle_baselines",
+    "name": "baseline",
+    "patience": 15,
+    "smoke": false,
+    "resume": true
+  }
+}
+
+=== Training RGB baseline ===
+New https://pypi.org/project/ultralytics/8.4.189 available  Update with 'pip install -U ultralytics'
+WARNING Resume ignores ['name'], using checkpoint values. Start a new run to change them.
+Ultralytics 8.4.188  Python-3.13.9 torch-2.9.1+cu128 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+engine\trainer: agnostic_nms=False, amp=True, angle=1.0, augment=False, auto_augment=randaugment, batch=4, bgr=0.0, box=7.5, cache=False, cfg=None, channels_last=None, classes=None, close_mosaic=10, cls=0.5, cls_pw=0.0, cls_remap=True, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=D:\dronevehicle_feasibility\yolo_obb_data\rgb.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dgrad=0.5, dis=6.0, distill_model=None, dlam=1.0, dlog=1.0, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=60, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=640, iou=0.7, kobj=1.0, line_width=None, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2\weights\last.pt, momentum=0.937, mosaic=1.0, multi_scale=0.0, name=baseline_rgb-2, nbs=64, nms=None, opset=None, optimize=False, optimizer=MuSGD, overlap_mask=True, patience=15, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=runs\dronevehicle_baselines, quantize=None, rect=False, resume=C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2\weights\last.pt, retina_masks=False, rle=1.0, save=True, save_conf=False, save_crop=False, save_dir=C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=20261025, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=obb, time=None, tracker=tracktrack.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.0, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=0, workspace=None
+
+                   from  n    params  module                                       arguments
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]
+  2                  -1  1      6640  ultralytics.nn.modules.block.C3k2            [32, 64, 1, False, 0.25]
+  3                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]
+  4                  -1  1     26080  ultralytics.nn.modules.block.C3k2            [64, 128, 1, False, 0.25]
+  5                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+  6                  -1  1     87040  ultralytics.nn.modules.block.C3k2            [128, 128, 1, True]
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]
+  8                  -1  1    346112  ultralytics.nn.modules.block.C3k2            [256, 256, 1, True]
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]
+ 10                  -1  1    249728  ultralytics.nn.modules.block.C2PSA           [256, 256, 1]
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 13                  -1  1    111296  ultralytics.nn.modules.block.C3k2            [384, 128, 1, False]
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 16                  -1  1     32096  ultralytics.nn.modules.block.C3k2            [256, 64, 1, False]
+ 17                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 19                  -1  1     86720  ultralytics.nn.modules.block.C3k2            [192, 128, 1, False]
+ 20                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 22                  -1  1    378880  ultralytics.nn.modules.block.C3k2            [384, 256, 1, True]
+ 23        [16, 19, 22]  1    503314  ultralytics.nn.modules.head.OBB              [5, 1, 16, None, [64, 128, 256]]
+YOLO11n-obb summary: 196 layers, 2,662,482 parameters, 2,662,466 gradients, 6.8 GFLOPs
+
+Transferred 541/541 items from pretrained weights
+Freezing layer 'model.23.dfl.conv.weight'
+AMP: running Automatic Mixed Precision (AMP) checks...
+AMP: checks passed
+train: Fast image access  (ping: 0.3±0.1 ms, read: 326.6±47.9 MB/s, size: 275.8 KB)
+train: Scanning D:\dronevehicle_feasibility\yolo_obb_data\labels\rgb\train.cache... 17961 images, 512 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 17961/17961 3.8Git/s 0.0s
+train: D:\dronevehicle_feasibility\yolo_obb_data\images\rgb\train\00941.jpg: 1 duplicate labels removed
+albumentations: Blur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+val: Fast image access  (ping: 0.2±0.1 ms, read: 291.1±50.6 MB/s, size: 247.3 KB)
+val: Scanning D:\dronevehicle_feasibility\yolo_obb_data\labels\rgb\val.cache... 1468 images, 27 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1468/1468 246.3Mit/s 0.0s
+optimizer: MuSGD(lr=0.01, momentum=0.937) with parameter groups 87 weight(decay=0.0), 97 weight(decay=0.0005), 96 bias(decay=0.0)
+Plotting labels to C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2\labels.jpg...
+Resuming training C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2\weights\last.pt from epoch 47 to 60 total epochs
+Using 17961 train, 1468 val images for fraction=1.0 at imgsz=640
+Using 0 dataloader workers
+Logging results to C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2
+Starting training for 60 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      47/60      1.38G     0.7964     0.5814     0.9807     0.0169          9        640: 100% ━━━━━━━━━━━━ 4491/4491 3.7it/s 20:26
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 5.1it/s 1:12
+                   all       1468      22418      0.768      0.712      0.758      0.589
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      48/60      1.57G     0.7951     0.5799       0.98    0.01665          4        640: 100% ━━━━━━━━━━━━ 4491/4491 2.7it/s 27:28
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 3.1it/s 1:59
+                   all       1468      22418      0.759      0.718      0.758       0.59
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      49/60      1.78G      0.795     0.5793     0.9806    0.01644          9        640: 100% ━━━━━━━━━━━━ 4491/4491 1.6it/s 46:29
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 2.4it/s 2:35
+                   all       1468      22418      0.764      0.715      0.758       0.59
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      50/60      1.78G     0.7902     0.5732     0.9782    0.01636         12        640: 100% ━━━━━━━━━━━━ 4491/4491 1.4it/s 54:10
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 2.3it/s 2:38
+                   all       1468      22418      0.766      0.712      0.758       0.59
+Closing dataloader mosaic
+albumentations: Blur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      51/60      1.79G     0.7591     0.5341      0.993    0.01403          3        640: 100% ━━━━━━━━━━━━ 4491/4491 2.0it/s 37:45
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 6.8it/s 54.3s
+                   all       1468      22418      0.765      0.715      0.758       0.59
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      52/60      1.81G     0.7512     0.5236     0.9901     0.0137          8        640: 100% ━━━━━━━━━━━━ 4491/4491 2.1it/s 34:58
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 5.3it/s 1:10
+                   all       1468      22418      0.768      0.711      0.758       0.59
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      53/60      1.81G     0.7502     0.5237     0.9892    0.01361          2        640: 100% ━━━━━━━━━━━━ 4491/4491 4.1it/s 18:22
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 5.3it/s 1:10
+                   all       1468      22418      0.769      0.712      0.758      0.591
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      54/60      1.81G     0.7469     0.5194      0.986    0.01353         13        640: 100% ━━━━━━━━━━━━ 4491/4491 2.0it/s 38:03
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 6.3it/s 57.9s
+                   all       1468      22418      0.769      0.712      0.759      0.592
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      55/60      1.81G     0.7429     0.5142      0.986    0.01335          6        640: 100% ━━━━━━━━━━━━ 4491/4491 2.0it/s 38:06
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 2.4it/s 2:31
+                   all       1468      22418      0.768      0.714       0.76      0.593
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      56/60      1.81G     0.7399      0.511     0.9847     0.0131         45        640: 100% ━━━━━━━━━━━━ 4491/4491 2.0it/s 37:42
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 5.4it/s 1:08
+                   all       1468      22418      0.769      0.713       0.76      0.593
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      57/60      1.81G      0.737     0.5066     0.9824    0.01311          9        640: 100% ━━━━━━━━━━━━ 4491/4491 2.4it/s 31:01
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 4.5it/s 1:21
+                   all       1468      22418      0.766      0.717      0.761      0.593
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      58/60      1.81G     0.7359     0.5034     0.9833    0.01296         23        640: 100% ━━━━━━━━━━━━ 4491/4491 3.9it/s 18:58
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 5.3it/s 1:09
+                   all       1468      22418      0.769      0.715      0.762      0.594
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      59/60      1.81G     0.7329     0.4995      0.981    0.01282          4        640: 100% ━━━━━━━━━━━━ 4491/4491 4.1it/s 18:12
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 5.3it/s 1:10
+                   all       1468      22418      0.771      0.715      0.763      0.594
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss angle_loss  Instances       Size
+      60/60      1.81G     0.7328     0.4986     0.9784    0.01275         10        640: 100% ━━━━━━━━━━━━ 4491/4491 4.1it/s 18:12
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 5.3it/s 1:10
+                   all       1468      22418      0.774      0.714      0.763      0.594
+
+14 epochs completed in 7.685 hours.
+Optimizer stripped from C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2\weights\last.pt, 5.6MB
+Optimizer stripped from C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2\weights\best.pt, 5.6MB
+
+Validating C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2\weights\best.pt...
+Ultralytics 8.4.188  Python-3.13.9 torch-2.9.1+cu128 CUDA:0 (NVIDIA GeForce RTX 4060 Laptop GPU, 8188MiB)
+YOLO11n-obb summary (fused): 109 layers, 2,654,698 parameters, 0 gradients, 6.6 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 367/367 5.9it/s 1:02
+                   all       1468      22418      0.775      0.713      0.763      0.594
+                   bus        285        751      0.913      0.924      0.941      0.768
+                   car       1360      18925      0.921      0.899      0.951      0.751
+           freight_car        273        710      0.637      0.569      0.615      0.445
+                 truck        405       1336      0.757      0.631      0.719      0.549
+                   van        286        696      0.645      0.543      0.589      0.456
+Speed: 0.9ms preprocess, 7.6ms inference, 0.0ms loss, 6.7ms postprocess per image
+Results saved to C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2
+Finished rgb. Run artifacts: C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2
+Best checkpoint: C:\Users\User\runs\obb\runs\dronevehicle_baselines\baseline_rgb-2\weights\best.pt
+Metrics/logs are in the run directory (results.csv, results.png, args.yaml).
+(base) PS D:\dronevehicle_feasibility>
