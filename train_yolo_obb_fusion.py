@@ -99,8 +99,15 @@ class ReliabilityOBBModel(OBBModel):
 
     def forward(self, x, *args, **kwargs):
         if isinstance(x, dict):
-            # Base OBBModel uses dict input to calculate its native criterion/loss.
-            return self.loss(x, *args, **kwargs)
+            # OBBModel.loss() calls predict(batch["img"]) directly, bypassing this
+            # forward() override. Fuse paired images here before invoking native loss.
+            batch = dict(x)
+            image = batch.get("img")
+            if torch.is_tensor(image) and image.ndim == 4 and image.shape[1] == 6:
+                batch["img"], _weights = self.reliability_gate(image)
+            elif torch.is_tensor(image) and image.ndim == 4 and image.shape[1] != 3:
+                raise ValueError(f"Expected 6-channel paired input or 3-channel image, got {tuple(image.shape)}")
+            return self.loss(batch, *args, **kwargs)
         if not torch.is_tensor(x) or x.ndim != 4:
             return super().forward(x, *args, **kwargs)
         if x.shape[1] == 6:
@@ -129,6 +136,7 @@ class PairedOBBTrainer(OBBTrainer):
             prefix=f"{mode}: ",
             data=self.data,
             task="obb",  # critical: parse 5-value OBB labels, not 4-value axis-aligned boxes
+            fraction=self.args.fraction,  # make --smoke actually limit the dataset
         )
 
     def get_model(self, cfg=None, weights=None, verbose=True):
@@ -226,6 +234,8 @@ def main():
         "hsv_s": 0.0,
         "hsv_v": 0.0,
         "fraction": 0.01 if args.smoke else 1.0,
+        "mosaic": 0.0 if args.smoke else 1.0,
+        "close_mosaic": 0 if args.smoke else 10,
     }
     trainer = PairedOBBTrainer(overrides=overrides)
     trainer.train()
