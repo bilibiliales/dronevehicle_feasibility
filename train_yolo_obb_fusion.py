@@ -128,6 +128,7 @@ class PairedOBBTrainer(OBBTrainer):
             pad=0.0 if mode == "train" else 0.5,
             prefix=f"{mode}: ",
             data=self.data,
+            task="obb",  # critical: parse 5-value OBB labels, not 4-value axis-aligned boxes
         )
 
     def get_model(self, cfg=None, weights=None, verbose=True):
