@@ -1,0 +1,21 @@
+# Local Windows config for controlled RGB-IR feature-fusion experiments.
+# No test split is configured: model selection must use validation only.
+path: D:/dronevehicle_feasibility/yolo_obb_data
+
+train_rgb: images/rgb/train
+train_ir: images/ir/train
+train_rgb_labels: labels/rgb/train
+train_ir_labels: labels/ir/train
+
+val_rgb: images/rgb/val
+val_ir: images/ir/val
+val_rgb_labels: labels/rgb/val
+val_ir_labels: labels/ir/val
+
+nc: 5
+names:
+  - bus
+  - car
+  - freight_car
+  - truck
+  - van
