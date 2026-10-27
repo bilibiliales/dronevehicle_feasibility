@@ -73,7 +73,7 @@ def infer(model_path: Path, image_paths: dict[str, Path], imgsz: int,
           device: str, conf: float, cache_path: Path) -> dict:
     if cache_path.exists():
         cache = json.loads(cache_path.read_text(encoding="utf-8"))
-        if cache.get("model") == str(model_path.resolve()) and cache.get("imgsz") == imgsz:
+        if cache.get("model") == str(model_path.resolve()) and cache.get("imgsz") == imgsz and cache.get("conf") == conf:
             print(f"[CACHE] {cache_path}")
             return cache["predictions"]
     print(f"[INFER] {model_path}")
@@ -103,7 +103,7 @@ def infer(model_path: Path, image_paths: dict[str, Path], imgsz: int,
             print(f"  {i}/{len(image_paths)}")
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(json.dumps({
-        "model": str(model_path.resolve()), "imgsz": imgsz, "predictions": out
+        "model": str(model_path.resolve()), "imgsz": imgsz, "conf": conf, "predictions": out
     }), encoding="utf-8")
     return out
 
@@ -156,10 +156,12 @@ def ap_for_class(gt_by_key: dict[str, list], pred_by_key: dict[str, list],
     ap = 0.0
     for r in np.linspace(0, 1, 101):
         ap += (float(precision[recall >= r].max()) if np.any(recall >= r) else 0.0) / 101
-    final_p = float(precision[-1])
-    final_r = float(recall[-1])
-    f1 = 2 * final_p * final_r / max(final_p + final_r, 1e-12)
-    return ap, final_p, final_r, f1
+    f1_curve = 2 * precision * recall / np.maximum(precision + recall, 1e-12)
+    best_idx = int(np.argmax(f1_curve))
+    best_p = float(precision[best_idx])
+    best_r = float(recall[best_idx])
+    best_f1 = float(f1_curve[best_idx])
+    return ap, best_p, best_r, best_f1
 
 
 def evaluate(name: str, gt_by_key: dict[str, list], pred_by_key: dict[str, list],
@@ -171,7 +173,7 @@ def evaluate(name: str, gt_by_key: dict[str, list], pred_by_key: dict[str, list]
         ap, p, r, f1 = ap_for_class(gt, pred, threshold)
         metrics[f"AP{threshold:.2f}"] = round(ap, 5)
         if abs(threshold - 0.5) < 1e-6:
-            metrics.update(P=round(p, 5), R=round(r, 5), F1=round(f1, 5))
+            metrics.update(P_at_best_F1=round(p, 5), R_at_best_F1=round(r, 5), max_F1=round(f1, 5))
     return {"method": name, "images": len(gt), "ground_truth_boxes": sum(map(len, gt.values())), **metrics}
 
 
