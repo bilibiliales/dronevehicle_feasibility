@@ -738,6 +738,57 @@ class DualYOLO11MiddleFusionOBB(nn.Module):
         print(f"[INFO] Loaded {matched} matched params into {branch_name} from {ckpt_path}")
 
 
+class ReliabilityOnlyFusionOBB(DualYOLO11MiddleFusionOBB):
+    """Controlled ablation: reliability-weighted feature fusion only.
+
+    Uses the same dual YOLO11-OBB branches and detection neck/head as the
+    simple-add baseline. It intentionally excludes S2RH, SARM, and their
+    auxiliary losses so the fusion operator is the main experimental variable.
+    """
+    variant_name = "reliability_only_obb"
+
+    def __init__(self, model_cfg=None, nc=5, verbose=True):
+        super().__init__(model_cfg=model_cfg, nc=nc, verbose=verbose)
+        was_training = self.training
+        self.eval()
+        with torch.no_grad():
+            dummy = torch.zeros(1, 3, 128, 128)
+            _, rgb_outputs = self._forward_graph(
+                self.rgb_layers, dummy, end_idx=self.backbone_end_idx
+            )
+        if was_training:
+            self.train()
+
+        self.fusions = nn.ModuleDict({
+            str(idx): TaRFusion(
+                int(rgb_outputs[idx].shape[1]),
+                int(rgb_outputs[idx].shape[1]),
+                c_out=int(rgb_outputs[idx].shape[1]),
+            )
+            for idx in self.fusion_indices
+        })
+
+    def _forward_backbones(self, rgb, ir):
+        _, rgb_outputs = self._forward_graph(
+            self.rgb_layers, rgb, end_idx=self.backbone_end_idx
+        )
+        _, ir_outputs = self._forward_graph(
+            self.ir_backbone, ir, end_idx=self.backbone_end_idx
+        )
+        fused_outputs = list(rgb_outputs)
+        fusion_aux = {}
+        for idx in self.fusion_indices:
+            fused, aux = self.fusions[str(idx)](rgb_outputs[idx], ir_outputs[idx])
+            fused_outputs[idx] = fused
+            fusion_aux[idx] = aux
+        self._last_aux = {
+            "rgb_outputs": rgb_outputs,
+            "ir_outputs": ir_outputs,
+            "fusion_aux": fusion_aux,
+        }
+        return fused_outputs
+
+
 class TASCNetOBB(DualYOLO11MiddleFusionOBB):
     variant_name = "tascnet_obb"
 
@@ -1403,9 +1454,14 @@ def build_model(variant, model_cfg, nc, verbose=True, model_kwargs=None):
 
     baseline_aliases = {"baseline", "baseline_obb", "yolo11_baseline", "yolo11_obb"}
     tascnet_aliases = {"tascnet", "tascnet_obb", "tasc", "tasc-net"}
+    reliability_aliases = {"reliability_only", "reliability_only_obb", "tar_only"}
 
     if variant in tascnet_aliases:
         return TASCNetOBB(model_cfg=model_cfg, nc=nc, verbose=verbose, **model_kwargs)
+    if variant in reliability_aliases:
+        if model_kwargs:
+            print("[WARN] Reliability-only variant ignores TASCNet-specific kwargs.")
+        return ReliabilityOnlyFusionOBB(model_cfg=model_cfg, nc=nc, verbose=verbose)
     if variant in baseline_aliases:
         if model_kwargs:
             print("[WARN] Baseline variant ignores TASCNet-specific kwargs.")
