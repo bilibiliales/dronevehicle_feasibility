@@ -125,8 +125,13 @@ def main():
     if not rgb_val.is_dir() or not ir_val.is_dir():
         raise FileNotFoundError(f"Expected validation folders: {rgb_val} and {ir_val}")
 
-    # Import custom class definitions before loading the fusion checkpoint.
-    import train_yolo_obb_fusion  # noqa: F401
+    # Checkpoints trained by executing train_yolo_obb_fusion.py store custom
+    # class references as __main__.ReliabilityOBBModel / ReliabilityGate.
+    # Register those names in this evaluator's __main__ before torch.load().
+    import __main__
+    import train_yolo_obb_fusion
+    __main__.ReliabilityOBBModel = train_yolo_obb_fusion.ReliabilityOBBModel
+    __main__.ReliabilityGate = train_yolo_obb_fusion.ReliabilityGate
 
     common = dict(data=str(yaml_path), imgsz=args.imgsz, batch=args.batch,
                   device=args.device, split="val", plots=False, save_json=False,
