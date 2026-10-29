@@ -723,7 +723,11 @@ class DualYOLO11MiddleFusionOBB(nn.Module):
         if not ckpt_path.exists():
             print(f"[WARN] {branch_name} pretrained checkpoint not found: {ckpt_path}")
             return
-        ckpt = torch.load(ckpt_path, map_location="cpu")
+        ckpt = torch.load(
+            ckpt_path,
+            map_location="cpu",
+            weights_only=False,
+        )
         src_state = self._extract_state_dict(ckpt)
         src_lookup = {self._canonical_state_key(k): v for k, v in src_state.items()}
 
@@ -1482,7 +1486,17 @@ def has_split_config(cfg_path, split="test"):
     return has_primary and has_rgb_label
 
 def run_training(args):
-    device = args.device if args.device is not None else ("cuda:0" if torch.cuda.is_available() else "cpu")
+    device_arg = str(args.device).strip().lower()
+
+    if device_arg.isdigit():
+        device = torch.device(
+            f"cuda:{device_arg}" if torch.cuda.is_available() else "cpu"
+        )
+    elif device_arg == "cuda":
+        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    else:
+        device = torch.device(device_arg)
+
     cfg_path = args.data
     save_dir = Path(args.save_dir)
     save_dir.mkdir(parents=True, exist_ok=True)
