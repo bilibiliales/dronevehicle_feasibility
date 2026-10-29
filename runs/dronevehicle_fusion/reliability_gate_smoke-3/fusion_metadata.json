@@ -1,0 +1,26 @@
+{
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch": "2.9.1+cu128",
+  "ultralytics": "8.4.188",
+  "cuda": "12.8",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "args": {
+    "data_dir": "D:\\dronevehicle_feasibility\\yolo_obb_data",
+    "model": "yolo11n-obb.yaml",
+    "pretrained": "yolo11n-obb.pt",
+    "epochs": 1,
+    "imgsz": 320,
+    "batch": 1,
+    "workers": 0,
+    "device": "0",
+    "seed": 20261025,
+    "project": "runs/dronevehicle_fusion",
+    "name": "reliability_gate",
+    "patience": 20,
+    "smoke": true
+  },
+  "fusion": "input-level learned pixel-wise reliability gate",
+  "supervision": "RGB labels"
+}

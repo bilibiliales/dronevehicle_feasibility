@@ -723,7 +723,11 @@ class DualYOLO11MiddleFusionOBB(nn.Module):
         if not ckpt_path.exists():
             print(f"[WARN] {branch_name} pretrained checkpoint not found: {ckpt_path}")
             return
-        ckpt = torch.load(ckpt_path, map_location="cpu")
+        ckpt = torch.load(
+            ckpt_path,
+            map_location="cpu",
+            weights_only=False,
+        )
         src_state = self._extract_state_dict(ckpt)
         src_lookup = {self._canonical_state_key(k): v for k, v in src_state.items()}
 
@@ -736,6 +740,57 @@ class DualYOLO11MiddleFusionOBB(nn.Module):
                 matched += 1
         module.load_state_dict(dst_state, strict=False)
         print(f"[INFO] Loaded {matched} matched params into {branch_name} from {ckpt_path}")
+
+
+class ReliabilityOnlyFusionOBB(DualYOLO11MiddleFusionOBB):
+    """Controlled ablation: reliability-weighted feature fusion only.
+
+    Uses the same dual YOLO11-OBB branches and detection neck/head as the
+    simple-add baseline. It intentionally excludes S2RH, SARM, and their
+    auxiliary losses so the fusion operator is the main experimental variable.
+    """
+    variant_name = "reliability_only_obb"
+
+    def __init__(self, model_cfg=None, nc=5, verbose=True):
+        super().__init__(model_cfg=model_cfg, nc=nc, verbose=verbose)
+        was_training = self.training
+        self.eval()
+        with torch.no_grad():
+            dummy = torch.zeros(1, 3, 128, 128)
+            _, rgb_outputs = self._forward_graph(
+                self.rgb_layers, dummy, end_idx=self.backbone_end_idx
+            )
+        if was_training:
+            self.train()
+
+        self.fusions = nn.ModuleDict({
+            str(idx): TaRFusion(
+                int(rgb_outputs[idx].shape[1]),
+                int(rgb_outputs[idx].shape[1]),
+                c_out=int(rgb_outputs[idx].shape[1]),
+            )
+            for idx in self.fusion_indices
+        })
+
+    def _forward_backbones(self, rgb, ir):
+        _, rgb_outputs = self._forward_graph(
+            self.rgb_layers, rgb, end_idx=self.backbone_end_idx
+        )
+        _, ir_outputs = self._forward_graph(
+            self.ir_backbone, ir, end_idx=self.backbone_end_idx
+        )
+        fused_outputs = list(rgb_outputs)
+        fusion_aux = {}
+        for idx in self.fusion_indices:
+            fused, aux = self.fusions[str(idx)](rgb_outputs[idx], ir_outputs[idx])
+            fused_outputs[idx] = fused
+            fusion_aux[idx] = aux
+        self._last_aux = {
+            "rgb_outputs": rgb_outputs,
+            "ir_outputs": ir_outputs,
+            "fusion_aux": fusion_aux,
+        }
+        return fused_outputs
 
 
 class TASCNetOBB(DualYOLO11MiddleFusionOBB):
@@ -1403,9 +1458,14 @@ def build_model(variant, model_cfg, nc, verbose=True, model_kwargs=None):
 
     baseline_aliases = {"baseline", "baseline_obb", "yolo11_baseline", "yolo11_obb"}
     tascnet_aliases = {"tascnet", "tascnet_obb", "tasc", "tasc-net"}
+    reliability_aliases = {"reliability_only", "reliability_only_obb", "tar_only"}
 
     if variant in tascnet_aliases:
         return TASCNetOBB(model_cfg=model_cfg, nc=nc, verbose=verbose, **model_kwargs)
+    if variant in reliability_aliases:
+        if model_kwargs:
+            print("[WARN] Reliability-only variant ignores TASCNet-specific kwargs.")
+        return ReliabilityOnlyFusionOBB(model_cfg=model_cfg, nc=nc, verbose=verbose)
     if variant in baseline_aliases:
         if model_kwargs:
             print("[WARN] Baseline variant ignores TASCNet-specific kwargs.")
@@ -1426,7 +1486,17 @@ def has_split_config(cfg_path, split="test"):
     return has_primary and has_rgb_label
 
 def run_training(args):
-    device = args.device if args.device is not None else ("cuda:0" if torch.cuda.is_available() else "cpu")
+    device_arg = str(args.device).strip().lower()
+
+    if device_arg.isdigit():
+        device = torch.device(
+            f"cuda:{device_arg}" if torch.cuda.is_available() else "cpu"
+        )
+    elif device_arg == "cuda":
+        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    else:
+        device = torch.device(device_arg)
+
     cfg_path = args.data
     save_dir = Path(args.save_dir)
     save_dir.mkdir(parents=True, exist_ok=True)
