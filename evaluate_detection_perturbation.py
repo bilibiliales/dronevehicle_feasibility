@@ -22,6 +22,7 @@ from ultralytics.models.yolo.obb import OBBValidator
 
 VARIANT = "original"
 LIMIT = 300
+IMAGE_COUNT = 0
 
 
 def paired_path(rgb_path: str | Path, target: str = "ir") -> Path:
@@ -123,7 +124,7 @@ def extract_metrics(result, model_name, variant):
     return {
         "model": model_name,
         "variant": variant,
-        "images": LIMIT,
+        "images": IMAGE_COUNT,
         "precision": float(box.mp),
         "recall": float(box.mr),
         "map50": float(box.map50),
@@ -132,7 +133,7 @@ def extract_metrics(result, model_name, variant):
 
 
 def main():
-    global VARIANT, LIMIT
+    global VARIANT, LIMIT, IMAGE_COUNT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", default=r"D:\\dronevehicle_feasibility\\yolo_obb_data")
     parser.add_argument("--rgb-weights", required=True)
@@ -155,6 +156,7 @@ def main():
         rgb_paths = rgb_paths[:LIMIT]
     if not rgb_paths:
         raise RuntimeError(f"No RGB validation images found in {rgb_val}")
+    IMAGE_COUNT = len(rgb_paths)
     missing = [p.name for p in rgb_paths if not paired_path(p).is_file()]
     if missing:
         raise FileNotFoundError(f"Missing IR pairs ({len(missing)}), first few: {missing[:10]}")
@@ -214,7 +216,8 @@ def main():
         "rgb_label_yaml": str(yaml_path),
         "images_requested": args.limit,
         "images_evaluated": len(rgb_paths),
-        "image_selection": "first N sorted RGB validation filenames; same pairs in every variant",
+        "image_selection": "first N sorted RGB validation filenames; same pairs in every variant" if args.limit > 0 else "all sorted RGB validation filenames; same pairs in every variant",
+        "selected_filenames": [p.name for p in rgb_paths],
         "note": "Synthetic robustness stress test. RGB baseline cannot receive IR-only perturbations. Delta metrics are relative to each model's own original variant.",
         "results": rows,
     }, indent=2, ensure_ascii=False), encoding="utf-8")
