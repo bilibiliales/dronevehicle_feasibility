@@ -1,0 +1,141 @@
+{
+  "rgb_label_yaml": "D:\\dronevehicle_feasibility\\yolo_obb_data\\rgb.yaml",
+  "images_requested": 300,
+  "images_evaluated": 300,
+  "image_selection": "first N sorted RGB validation filenames; same pairs in every variant",
+  "note": "Synthetic robustness stress test. RGB baseline cannot receive IR-only perturbations. Delta metrics are relative to each model's own original variant.",
+  "results": [
+    {
+      "model": "rgb_baseline",
+      "variant": "original",
+      "images": 300,
+      "precision": 0.7783806478099997,
+      "recall": 0.7473258100582078,
+      "map50": 0.7892272458718915,
+      "map50_95": 0.6680992193763313,
+      "delta_map50": 0.0,
+      "delta_map50_95": 0.0,
+      "delta_recall": 0.0
+    },
+    {
+      "model": "rgb_ir_fusion",
+      "variant": "original",
+      "images": 300,
+      "precision": 0.7178987193762381,
+      "recall": 0.7611071727059857,
+      "map50": 0.7667121579472423,
+      "map50_95": 0.6615863140818068,
+      "delta_map50": 0.0,
+      "delta_map50_95": 0.0,
+      "delta_recall": 0.0
+    },
+    {
+      "model": "rgb_baseline",
+      "variant": "rgb_dark",
+      "images": 300,
+      "precision": 0.8474331310139025,
+      "recall": 0.7001080913012231,
+      "map50": 0.7842133013163227,
+      "map50_95": 0.6646465066403797,
+      "delta_map50": -0.005013944555568806,
+      "delta_map50_95": -0.003452712735951602,
+      "delta_recall": -0.04721771875698466
+    },
+    {
+      "model": "rgb_ir_fusion",
+      "variant": "rgb_dark",
+      "images": 300,
+      "precision": 0.6614720215432229,
+      "recall": 0.64166913889265,
+      "map50": 0.6338894076257062,
+      "map50_95": 0.49746500754236533,
+      "delta_map50": -0.13282275032153612,
+      "delta_map50_95": -0.16412130653944146,
+      "delta_recall": -0.11943803381333573
+    },
+    {
+      "model": "rgb_baseline",
+      "variant": "rgb_blur",
+      "images": 300,
+      "precision": 0.7315449064949515,
+      "recall": 0.6679272602378085,
+      "map50": 0.7095176765905287,
+      "map50_95": 0.5523290414638011,
+      "delta_map50": -0.07970956928136286,
+      "delta_map50_95": -0.11577017791253019,
+      "delta_recall": -0.07939854982039929
+    },
+    {
+      "model": "rgb_ir_fusion",
+      "variant": "rgb_blur",
+      "images": 300,
+      "precision": 0.6225498971052429,
+      "recall": 0.6855411439039224,
+      "map50": 0.6296102613943593,
+      "map50_95": 0.5169741305015724,
+      "delta_map50": -0.13710189655288307,
+      "delta_map50_95": -0.14461218358023442,
+      "delta_recall": -0.07556602880206331
+    },
+    {
+      "model": "rgb_baseline",
+      "variant": "rgb_noise",
+      "images": 300,
+      "precision": 0.6045862668602633,
+      "recall": 0.401316495585679,
+      "map50": 0.404492592290308,
+      "map50_95": 0.3139767126643647,
+      "delta_map50": -0.38473465358158354,
+      "delta_map50_95": -0.3541225067119666,
+      "delta_recall": -0.34600931447252875
+    },
+    {
+      "model": "rgb_ir_fusion",
+      "variant": "rgb_noise",
+      "images": 300,
+      "precision": 0.3887808104461064,
+      "recall": 0.2994634911455195,
+      "map50": 0.17493499827898087,
+      "map50_95": 0.14364762435854503,
+      "delta_map50": -0.5917771596682615,
+      "delta_map50_95": -0.5179386897232617,
+      "delta_recall": -0.4616436815604662
+    },
+    {
+      "model": "rgb_ir_fusion",
+      "variant": "ir_dark",
+      "images": 300,
+      "precision": 0.8289173581003971,
+      "recall": 0.6898441932841459,
+      "map50": 0.7600169672073737,
+      "map50_95": 0.6521469578024351,
+      "delta_map50": -0.006695190739868684,
+      "delta_map50_95": -0.009439356279371647,
+      "delta_recall": -0.07126297942183979
+    },
+    {
+      "model": "rgb_ir_fusion",
+      "variant": "ir_blur",
+      "images": 300,
+      "precision": 0.7886131122842592,
+      "recall": 0.702946173867338,
+      "map50": 0.7621745766306938,
+      "map50_95": 0.6580222198174436,
+      "delta_map50": -0.004537581316548578,
+      "delta_map50_95": -0.0035640942643632156,
+      "delta_recall": -0.05816099883864767
+    },
+    {
+      "model": "rgb_ir_fusion",
+      "variant": "ir_noise",
+      "images": 300,
+      "precision": 0.7798644637882342,
+      "recall": 0.6543174564652541,
+      "map50": 0.7384891199961467,
+      "map50_95": 0.6315935932135945,
+      "delta_map50": -0.028223037951095598,
+      "delta_map50_95": -0.029992720868212253,
+      "delta_recall": -0.10678971624073164
+    }
+  ]
+}
