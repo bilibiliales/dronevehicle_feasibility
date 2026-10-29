@@ -49,6 +49,10 @@ def perturb(image: np.ndarray, mode: str) -> np.ndarray:
 
 
 def apply_perturbation(image: np.ndarray, mode: str, seed: int) -> np.ndarray:
+    # RGB baseline variants are named rgb_dark/rgb_blur/rgb_noise, while this
+    # function receives only the modality-specific operation for fusion inputs.
+    if mode.startswith("rgb_") or mode.startswith("ir_"):
+        mode = mode.split("_", 1)[1]
     if mode != "noise":
         return perturb(image, mode)
     rng = np.random.default_rng(seed)
