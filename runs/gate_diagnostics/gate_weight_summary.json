@@ -1,0 +1,76 @@
+{
+  "checkpoint": "D:\\dronevehicle_feasibility\\runs\\dronevehicle_fusion\\reliability_gate\\weights\\best.pt",
+  "validation_pairs_found": 1468,
+  "processed_pairs": 1468,
+  "missing_pairs": [],
+  "diagnostic_note": "Gate weights are mean spatial softmax weights on directly resized normalized images; brightness bins are descriptive, not proof of causal reliability.",
+  "overall": {
+    "n": 1468,
+    "rgb_weight_mean": 0.908936005197364,
+    "ir_weight_mean": 0.09106394841414381,
+    "rgb_weight_std": 0.039958345839313215,
+    "ir_weight_std": 0.03995834570168688,
+    "mean_rgb_gray": 160.25660257465125,
+    "mean_ir_gray": 187.12801769932628
+  },
+  "by_rgb_brightness": {
+    "dark_rgb_<64": {
+      "n": 0
+    },
+    "mid_rgb_64_128": {
+      "n": 277,
+      "rgb_weight_mean": 0.8663942394273806,
+      "ir_weight_mean": 0.13360571320629291,
+      "rgb_weight_std": 0.008485680782921194,
+      "ir_weight_std": 0.008485678974202054,
+      "mean_rgb_gray": 121.28672817395932,
+      "mean_ir_gray": 185.95909776507446
+    },
+    "bright_rgb_>=128": {
+      "n": 1191,
+      "rgb_weight_mean": 0.9188302697803071,
+      "ir_weight_mean": 0.08116968405862299,
+      "rgb_weight_std": 0.03784779938721931,
+      "ir_weight_std": 0.03784779961752171,
+      "mean_rgb_gray": 169.3201250003369,
+      "mean_ir_gray": 187.3998823691733
+    }
+  },
+  "by_relative_brightness": {
+    "ir_dim_minus_rgb>=20": {
+      "n": 850,
+      "rgb_weight_mean": 0.8778019382673151,
+      "ir_weight_mean": 0.12219801548211014,
+      "rgb_weight_std": 0.01700414368125095,
+      "ir_weight_std": 0.01700414308964984,
+      "mean_rgb_gray": 139.13595619708556,
+      "mean_ir_gray": 189.37034596591445
+    },
+    "rgb_dim_minus_ir>=20": {
+      "n": 96,
+      "rgb_weight_mean": 0.9675898353258768,
+      "ir_weight_mean": 0.03241012030048296,
+      "rgb_weight_std": 0.005945762948024737,
+      "ir_weight_std": 0.0059457641390980795,
+      "mean_rgb_gray": 195.3673657788256,
+      "mean_ir_gray": 170.39992495081484
+    },
+    "brightness_similar_absdiff<20": {
+      "n": 522,
+      "rgb_weight_mean": 0.9488463293318548,
+      "ir_weight_mean": 0.05115362368452709,
+      "rgb_weight_std": 0.014456374040842527,
+      "ir_weight_std": 0.014456373390823687,
+      "mean_rgb_gray": 188.19130784922993,
+      "mean_ir_gray": 186.553147732386
+    }
+  },
+  "gate_rgb_weight_range": [
+    0.837070882320404,
+    0.9819523692131042
+  ],
+  "gate_ir_weight_range": [
+    0.01804766058921814,
+    0.1629290133714676
+  ]
+}
