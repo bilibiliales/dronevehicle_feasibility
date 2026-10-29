@@ -59,7 +59,7 @@ class _RGBLabelValidator(OBBValidator):
     dataset_kind = "rgb"
 
     def build_dataset(self, img_path, mode="val", batch=None):
-        return self.dataset_kind and self._make_dataset(img_path, mode, batch)
+        return self._make_dataset(img_path, mode, batch)
 
     def _make_dataset(self, img_path, mode, batch):
         # Mirror the standard OBB validator's YOLODataset arguments.
@@ -72,7 +72,7 @@ class _RGBLabelValidator(OBBValidator):
             rect=self.args.rect,
             cache=self.args.cache,
             single_cls=self.args.single_cls,
-            stride=max(int(self.stride), 32),
+            stride=32,
             pad=0.5,
             prefix=f"{mode}: ",
             data=self.data,
