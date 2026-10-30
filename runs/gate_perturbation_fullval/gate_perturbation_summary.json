@@ -1,0 +1,83 @@
+{
+  "checkpoint": "D:\\dronevehicle_feasibility\\runs\\dronevehicle_fusion\\reliability_gate\\weights\\best.pt",
+  "images_requested": 1468,
+  "images_with_missing_pair": [],
+  "processed_images": 1468,
+  "note": "Synthetic sensitivity test of gate weights only; does not measure detection mAP and cannot prove that the gate improves predictions.",
+  "mean_weights_by_variant": {
+    "original": {
+      "n": 1468,
+      "rgb_weight_mean": 0.908936005197364,
+      "ir_weight_mean": 0.09106394841414381,
+      "rgb_minus_ir_mean": 0.8178720567832201
+    },
+    "rgb_dark": {
+      "n": 1468,
+      "rgb_weight_mean": 0.8344584765161416,
+      "ir_weight_mean": 0.16554147742018713,
+      "rgb_minus_ir_mean": 0.6689169990959545
+    },
+    "ir_dark": {
+      "n": 1468,
+      "rgb_weight_mean": 0.9509711803954694,
+      "ir_weight_mean": 0.04902876863174892,
+      "rgb_minus_ir_mean": 0.9019424117637205
+    },
+    "rgb_blur": {
+      "n": 1468,
+      "rgb_weight_mean": 0.9075205570914116,
+      "ir_weight_mean": 0.09247939615086614,
+      "rgb_minus_ir_mean": 0.8150411609405454
+    },
+    "ir_blur": {
+      "n": 1468,
+      "rgb_weight_mean": 0.903686891581447,
+      "ir_weight_mean": 0.09631306127383696,
+      "rgb_minus_ir_mean": 0.80737383030761
+    },
+    "rgb_noise": {
+      "n": 1468,
+      "rgb_weight_mean": 0.9132868425885078,
+      "ir_weight_mean": 0.08671313511938547,
+      "rgb_minus_ir_mean": 0.8265737074691224
+    },
+    "ir_noise": {
+      "n": 1468,
+      "rgb_weight_mean": 0.9122132233442988,
+      "ir_weight_mean": 0.08778675528349766,
+      "rgb_minus_ir_mean": 0.8244264680608011
+    }
+  },
+  "paired_weight_change_vs_original": {
+    "rgb_dark": {
+      "n": 1468,
+      "mean_change_rgb_weight_vs_original": -0.07447752868122236,
+      "mean_change_ir_weight_vs_original": 0.0744775290060433
+    },
+    "ir_dark": {
+      "n": 1468,
+      "mean_change_rgb_weight_vs_original": 0.04203517519810544,
+      "mean_change_ir_weight_vs_original": -0.0420351797823949
+    },
+    "rgb_blur": {
+      "n": 1468,
+      "mean_change_rgb_weight_vs_original": -0.0014154481059523954,
+      "mean_change_ir_weight_vs_original": 0.0014154477367223283
+    },
+    "ir_blur": {
+      "n": 1468,
+      "mean_change_rgb_weight_vs_original": -0.005249113615916925,
+      "mean_change_ir_weight_vs_original": 0.005249112859693145
+    },
+    "rgb_noise": {
+      "n": 1468,
+      "mean_change_rgb_weight_vs_original": 0.0043508373911439234,
+      "mean_change_ir_weight_vs_original": -0.004350813294758346
+    },
+    "ir_noise": {
+      "n": 1468,
+      "mean_change_rgb_weight_vs_original": 0.0032772181469348212,
+      "mean_change_ir_weight_vs_original": -0.0032771931306461548
+    }
+  }
+}
